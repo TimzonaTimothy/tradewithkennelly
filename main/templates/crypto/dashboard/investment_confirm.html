@@ -1,0 +1,184 @@
+{% extends "crypto/dashboard/base.html" %}
+{% load static %}
+
+{% block content %}
+{% include 'crypto/alerts.html' %}
+
+<!-- Dashboard Section -->
+<section class="dashboard-section">
+    <div class="outer-container">
+        <div class="dashboard-content">
+            <div class="profile-content">
+                <div class="title-box">
+                    <span>Confirm Investment</span>
+                </div>
+
+                {% if wallet == 'Bitcoin' %}
+                <!-- Bitcoin Wallet -->
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row clearfix">
+                        <p>You have requested to invest ${{amount}} USD, <br>Please pay ${{amount}} for successful payment</p> <br><br>
+
+                        <div class="form-group">
+                            <label>Bitcoin Address</label>
+                            <input type="text" name="Bitcoin" id="btc-addr"
+                                   value="bc1q8ld9kpz7mghsjqfln5x3awarcqkr630ph3l77n" readonly>
+                        </div>
+                        <!-- <center><p>QR Code</p></center> <br>
+                        <center><img src="{% static 'btc_address.jfif' %}" style="width: 500px;margin: 20px 0px;" alt=""></center> -->
+                        <div class="btn-box">
+                            <button style="float: left;" type="button" class="theme-btn btn-one" data-clipboard-target="#btc-addr" onclick="copyToClipboard('btc-addr')">Copy</button>
+                            <button style="float: right;" type="submit" class="theme-btn btn-one">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+                {% elif wallet == 'Ethereum' %}
+                <!-- Ethereum Wallet -->
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row clearfix">
+                        <p>You have requested to invest ${{amount}} USD, <br>Please pay ${{amount}} in Ethereum for successful payment</p> <br><br>
+
+                        <div class="form-group">
+                            <label>Ethereum Address</label>
+                            <input type="text" name="Ethereum" id="eth-addr"
+                                   value="0xc8DfBa38FdB8d33FDce918aD30C91e23b5793377" readonly>
+                        </div>
+                        <!-- <center><p>OR Code</p></center> <br>
+                        <center><img src="{% static 'eth_address.png' %}" style="width: 500px;margin: 20px 0px;" alt=""></center> -->
+                        <div class="btn-box">
+                            <button style="float: left;" type="button" class="theme-btn btn-one" data-clipboard-target="#eth-addr" onclick="copyToClipboard('eth-addr')">Copy</button>
+                            <button style="float: right;" type="submit" class="theme-btn btn-one">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+                {% elif wallet == 'USDT' %}
+                <!-- USDT Wallet -->
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row clearfix">
+                        <p>You have requested to invest ${{amount}} USD, <br>Please pay ${{amount}} in USDT for successful payment</p> <br><br>
+
+                        <div class="form-group">
+                            <label>USDT Address Trc20</label>
+                            <input type="text" name="USDT" id="usdt-addr"
+                                   value="TSRE3cWi3SANaoQNhPe3TE5UYigKEpvbhb" readonly>
+                        </div>
+                        <!-- <center><p>OR</p></center> <br>
+                        <center><img src="{% static 'usdt_address.png' %}" style="width: 500px;margin: 20px 0px;" alt=""></center> -->
+                        <div class="btn-box">
+                            <button style="float: left;" type="button" class="theme-btn btn-one" data-clipboard-target="#usdt-addr" onclick="copyToClipboard('usdt-addr')">Copy</button>
+                            <button style="float: right;" type="submit" class="theme-btn btn-one">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+                {% elif wallet == 'Bitcoin Cash' %}
+                <!-- Bitcoin Cash Wallet -->
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row clearfix">
+                        <p>You have requested to invest ${{amount}} USD, <br>Please pay ${{amount}} in Bitcoin Cash for successful payment</p> <br><br>
+
+                        <div class="form-group">
+                            <label>Bitcoin Cash Address</label>
+                            <input type="text" name="Bitcoin Cash" id="bch-addr"
+                                   value="qqsx2s8qyy220a2xfxq8nfz6mhhkh69xr5t0wssw8j" readonly>
+                        </div>
+                        <!-- <center><p>OR Code</p></center> <br>
+                        <center><img src="{% static 'bch_address.png' %}" style="width: 500px;margin: 20px 0px;" alt=""></center> -->
+                        <div class="btn-box">
+                            <button style="float: left;" type="button" class="theme-btn btn-one" data-clipboard-target="#bch-addr" onclick="copyToClipboard('bch-addr')">Copy</button>
+                            <button style="float: right;" type="submit" class="theme-btn btn-one">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+                {% elif wallet == 'BNB' %}
+                <!-- Bitcoin Cash Wallet -->
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row clearfix">
+                        <p>You have requested to invest ${{amount}} USD, <br>Please pay ${{amount}} in BNB for successful payment</p> <br><br>
+
+                        <div class="form-group">
+                            <label>BNB Address</label>
+                            <input type="text" name="BNB" id="bnb-addr"
+                                   value="0xc8DfBa38FdB8d33FDce918aD30C91e23b5793377" readonly>
+                        </div>
+                        <!-- <center><p>OR Code</p></center> <br>
+                        <center><img src="{% static 'bch_address.png' %}" style="width: 500px;margin: 20px 0px;" alt=""></center> -->
+                        <div class="btn-box">
+                            <button style="float: left;" type="button" class="theme-btn btn-one" data-clipboard-target="#bnb-addr" onclick="copyToClipboard('bnb-addr')">Copy</button>
+                            <button style="float: right;" type="submit" class="theme-btn btn-one">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+                {% elif wallet == 'LITECOIN' %}
+                <!-- Bitcoin Cash Wallet -->
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row clearfix">
+                        <p>You have requested to invest ${{amount}} USD, <br>Please pay ${{amount}} in LITECOIN for successful payment</p> <br><br>
+
+                        <div class="form-group">
+                            <label>LITECOIN Address</label>
+                            <input type="text" name="LITECOIN" id="lit-addr"
+                                   value="ltc1q9t2d9lhytypjtyfuv4d3x7sudzs8e7x3vry3h9" readonly>
+                        </div>
+                        <!-- <center><p>OR Code</p></center> <br>
+                        <center><img src="{% static 'bch_address.png' %}" style="width: 500px;margin: 20px 0px;" alt=""></center> -->
+                        <div class="btn-box">
+                            <button style="float: left;" type="button" class="theme-btn btn-one" data-clipboard-target="#lit-addr" onclick="copyToClipboard('lit-addr')">Copy</button>
+                            <button style="float: right;" type="submit" class="theme-btn btn-one">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+                {% else %}
+                <!-- Default Form -->
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row clearfix">
+                        <p>You have requested to invest ${{amount}} USD from {{wallet}}, <br>Please confirm</p>
+                        <button style="float: right;" type="submit" class="theme-btn btn-one">Submit</button>
+                    </div>
+                </form>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Dashboard Section End -->
+
+<script>
+    function copyToClipboard(addressId) {
+    // Get the text field using the passed ID
+    var content = document.getElementById(addressId);
+    
+    // Create a range object to select the text content
+    var range = document.createRange();
+    range.selectNode(content);
+    window.getSelection().removeAllRanges(); // Clear previous selections
+    window.getSelection().addRange(range);
+
+    // Execute the copy command
+    document.execCommand('copy');
+
+    // Clear the selection
+    window.getSelection().removeAllRanges();
+
+    // Alert the user
+    alert("Copied!");
+}
+
+
+</script>
+
+
+{% endblock %}

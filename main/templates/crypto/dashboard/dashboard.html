@@ -1,0 +1,139 @@
+{% extends "crypto/dashboard/base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+        <!-- Dashboard Section -->
+        <section class="dashboard-section">
+            <div class="outer-container">
+                <div class="dashboard-content">
+                    <div class="activites-content">
+                        <div class="row clearfix">
+                            
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 column">
+                                <a href="#" class="single-item">
+                                    <div class="icon-box"><img src="{% static 'assets/images/icons/icon-wallet.svg' %}" alt=""></div>
+                                    <span>Balance</span>
+                                    <h2 style="font-size: x-large;">${% if request.user.balance %}{{request.user.balance | intcomma }}{% else %}00.00{% endif %}</h2>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 column">
+                                <a href="#" class="single-item">
+                                    <div class="icon-box"><img src="{% static 'assets/images/icons/icon-wdr.svg' %}" alt=""></div>
+                                    <span>Total Invest</span>
+                                    <h2 style="font-size: x-large;">${% if request.user.total_invest %}{{request.user.total_invest | intcomma }}{% else %}00.00{% endif %}</h2>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 column">
+                                <a href="#" class="single-item">
+                                    <div class="icon-box"><img src="{% static 'assets/images/icons/icon-43.svg' %}" alt=""></div>
+                                    <span>TOTAL WITHDRAWN</span>
+                                    <h2 style="font-size: x-large;">${% if request.user.total_withdrawn %}{{request.user.total_withdrawn | intcomma }}{% else %}00.00{% endif %}</h2>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 column">
+                                <a href="#" class="single-item">
+                                    <div class="icon-box"><img src="{% static 'assets/images/icons/icon-wallet.svg' %}" alt=""></div>
+                                    <span>Active Deposit</span>
+                                    <h2 style="font-size: x-large;">${% if active_deposit > 0 %}{{active_deposit | intcomma }}{% else %}00.00{% endif %}</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="dashboard-content">
+                    <div class="statistics-content">
+                       
+                        <div class="row clearfix">
+                            <div class="col-lg-3 col-md-6 col-sm-12 column">
+                                <div class="single-item">
+                                    <div class="icon-box"><img src="assets/images/icons/icon-50.svg" alt=""></div>
+                                    <p>Total Deposit</p>
+                                    <span class="paid-text">${% if total_deposit %}{{ total_deposit }}{% else %}0.00{% endif %}</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-12 column">
+                                <div class="single-item">
+                                    <div class="icon-box"><img src="assets/images/icons/icon-52.svg" alt=""></div>
+                                    <p>Pending Deposits</p>
+                                    <span class="paid-text">{{pending}}</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-12 column">
+                                <div class="single-item">
+                                    <div class="icon-box"><img src="assets/images/icons/icon-51.svg" alt=""></div>
+                                    <p>Pending Withdrawal</p>
+                                    <span class="paid-text">${% if pending_withdrawal %}{{ pending_withdrawal }}{% else %}0.00{% endif %}</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6 col-sm-12 column">
+                                <div class="single-item">
+                                    <div class="icon-box"><img src="assets/images/icons/icon-52.svg" alt=""></div>
+                                    <p>Last Withdraw</p>
+                                    <span class="paid-text">${% if last_withdrawal %}{{ last_withdrawal.amount }}{% else %}0.00{% endif %}</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-content">
+                        <div class="title-box">Transaction History</div>
+                        <div class="dashboard-table">
+                            <table id="">
+                                <thead>
+                                    <tr>
+                                        <th>Invoice Id</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Wallet Type</th>
+                                        <th>Transaction Type</th>
+                                        <th>Detail</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if transactions %}
+                                        {% for transaction in transactions %}
+                                            <tr>
+                                                <td class="invoice-id"><span>#{{transaction.transaction_id}}</span></td>
+                                                
+                                                <td class="date"><img src="{% static 'assets/images/icons/icon-46.svg' %}" alt="">{{transactions.created_at}}</td>
+                                                <td>${{transaction.amount}}</td>
+                                        
+                                                <td>{{transaction.Wallet_Type}}</td>
+                                                <td>{{transaction.transaction_type}}</td>
+                                                <td>{{transaction.detail}}</td>
+                                            </tr>
+                                        
+                                        {% endfor %}
+                                    {% else %}
+                                        <p>You have not made any transaction</p>
+                                    {% endif %}
+                                    
+                                </tbody>
+                            </table> <br>
+                            {% if transactions > 5 %}
+                            <div class="btn-box">
+                                <a href="{% url 'payments:transactions' %}"><button type="submit" class="theme-btn btn-one">View All</button></a>
+                            </div>
+                            {% elif not transactions %}
+                            <div class="btn-box">
+                                <a href="{% url 'payments:investments' %}"><button type="submit" class="theme-btn btn-one">Deposit Now</button></a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        
+                    </div>
+                   
+            </div>
+        </section>
+        <!-- Dashboard Section End -->
+
+
+
+{% endblock %}

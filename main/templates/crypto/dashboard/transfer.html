@@ -1,0 +1,62 @@
+{% extends "crypto/dashboard/base.html" %}
+{% load static %}
+
+
+{% block content %}
+{% include 'crypto/alerts.html' %}
+
+        <!-- Dashboard Section -->
+        <section class="dashboard-section">
+            <div class="outer-container">
+                <div class="dashboard-content">
+                    <div class="profile-content">
+                        <div class="title-box">
+                            <span>Balance Transfer</span>
+                        </div>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label>Wallet</label>
+                                        <div class="select-box">
+                                            <select class="wide form-control" name="country" required>
+                                                <option value="" selected disabled>Select Wallet</option>
+                                                <option value="1">Deposit Wallet</option>
+                                                <option value="2">Interest Wallet</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label>Username</label>
+                                        <input type="text" name="username" placeholder=""  required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label>Amount</label>
+                                        <input type="text" name="amount" placeholder="" 
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="text">(Charge: 5 USD + 1%)</div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="btn-box">
+                                        <button type="submit" class="theme-btn btn-one">Transfer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Dashboard Section End -->
+
+
+
+{% endblock %}

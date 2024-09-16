@@ -1,0 +1,157 @@
+{% extends "crypto/base.html" %}
+{% load static %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+<style>
+    .valid {
+        border-color: green;
+    }
+    .invalid {
+        border-color: red;
+    }
+</style>
+        <!-- Form Section -->
+        <section class="form-section text-center">
+            <div class="pattern-layer">
+                <div class="pattern-1" style="background-image: url({% static 'assets/images/shape/shape-57.png);"></div>
+                <div class="pattern-2" style="background-image: url({% static 'assets/images/shape/shape-59.png);"></div>
+                <div class="pattern-3" style="background-image: url({% static 'assets/images/shape/shape-60.png);"></div>
+                <div class="pattern-4" style="background-image: url({% static 'assets/images/shape/shape-61.png);"></div>
+                <div class="pattern-5" style="background-image: url({% static 'assets/images/shape/shape-62.png);"></div>
+            </div>
+            <div class="auto-container">
+                <div class="section-title">
+                    <span class="sub-title">Sign Up</span>
+                    <h2>Welcome To NextaFinance</h2>
+                </div>
+                {% include 'crypto/alerts.html' %}
+                <div class="form-box">
+                    <h4>Sign Up to your account</h4>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input name="bot-c" type="hidden" />
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" name="username" placeholder="Your username" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" placeholder="Your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input id="country" type="text" name="country" placeholder="Your country" required>
+                            <p id="result"></p>
+                        </div>
+            
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" id="phone-number" name="phone" placeholder="Your phone number" required>
+                            <p id="phone-error" style="color: red; display: none;">Please enter a valid phone number.</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <div class="icon-box"><button><img src="{% static 'assets/images/icons/icon-21.svg' %}" alt=""></button>
+                            </div>
+                            <input type="password" name="password" placeholder="Password" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <div class="icon-box"><button><img src="{% static 'assets/images/icons/icon-21.svg' %}" alt=""></button>
+                            </div>
+                            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                        </div>
+                        <p>By signing up, you confirm that you’ve read and accepted our Privacy Policy.</p>
+                       
+                        <div class="btn-box">
+                            <button type="submit" class="theme-btn">Register</button>
+                            
+                        </div>
+                    </form>
+                    <div class="text">Already have an account? <a href="{% url 'accounts:sign_in' %}">Log in</a></div>
+                </div>
+            </div>
+        </section>
+        <!-- Form Section End -->
+
+        <script>
+            const countries = [
+                "AFGHANISTAN", "ALAND ISLANDS", "ALBANIA", "ALGERIA", "AMERICAN SAMOA",
+                "ANDORRA", "ANGOLA", "ANGUILLA", "ANTIGUA AND BARBUDA", "ARGENTINA", "ARMENIA",
+                "ARUBA", "AUSTRALIA", "AUSTRIA", "AZERBAIJAN", "BAHAMAS", "BAHRAIN", "BANGLADESH",
+                "BARBADOS", "BELARUS", "BELGIUM", "BELIZE", "BENIN", "BERMUDA", "BHUTAN",
+                "BOLIVIA", "BOSNIA AND HERZEGOVINA", "BOTSWANA", "BRAZIL", "BRITISH INDIAN OCEAN TERRITORY",
+                "BRUNEI DARUSSALAM", "BULGARIA", "BURKINA FASO", "BURUNDI", "CABO VERDE", "CAMBODIA",
+                "CAMEROON", "CANADA", "CAYMAN ISLANDS", "CENTRAL AFRICAN REPUBLIC", "CHAD", "CHILE",
+                "CHINA", "COLOMBIA", "COMOROS", "CONGO", "CONGO, DEMOCRATIC REPUBLIC OF THE", "COOK ISLANDS",
+                "COSTA RICA", "CROATIA", "CUBA", "CURACAO", "CYPRUS", "CZECH REPUBLIC", "DENMARK",
+                "DJIBOUTI", "DOMINICA", "DOMINICAN REPUBLIC", "ECUADOR", "EGYPT", "EL SALVADOR",
+                "EQUATORIAL GUINEA", "ERITREA", "ESTONIA", "ESWATINI", "ETHIOPIA", "FALKLAND ISLANDS (MALVINAS)",
+                "FAROE ISLANDS", "FIJI", "FINLAND", "FRANCE", "FRENCH GUIANA", "FRENCH POLYNESIA",
+                "GABON", "GAMBIA", "GEORGIA", "GERMANY", "GHANA", "GIBRALTAR", "GREECE", "GREENLAND",
+                "GRENADA", "GUADELOUPE", "GUAM", "GUATEMALA", "GUERNSEY", "GUINEA", "GUINEA-BISSAU",
+                "GUYANA", "HAITI", "HONDURAS", "HONG KONG", "HUNGARY", "ICELAND", "INDIA", "INDONESIA",
+                "IRAN", "IRAQ", "IRELAND", "ISLE OF MAN", "ISRAEL", "ITALY", "JAMAICA", "JAPAN",
+                "JERSEY", "JORDAN", "KAZAKHSTAN", "KENYA", "KIRIBATI", "KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF",
+                "KOREA, REPUBLIC OF", "KUWAIT", "KYRGYZSTAN", "LAO PEOPLE'S DEMOCRATIC REPUBLIC", "LATVIA",
+                "LEBANON", "LESOTHO", "LIBERIA", "LIBYA", "LIECHTENSTEIN", "LITHUANIA", "LUXEMBOURG",
+                "MACAO", "MADAGASCAR", "MALAWI", "MALAYSIA", "MALDIVES", "MALI", "MALTA", "MARSHALL ISLANDS",
+                "MARTINIQUE", "MAURITANIA", "MAURITIUS", "MEXICO", "MICRONESIA (FEDERATED STATES OF)",
+                "MOLDOVA", "MONACO", "MONGOLIA", "MONTENEGRO", "MONTSERRAT", "MOROCCO", "MOZAMBIQUE",
+                "MYANMAR", "NAMIBIA", "NAURU", "NEPAL", "NETHERLANDS", "NEW CALEDONIA", "NEW ZEALAND",
+                "NICARAGUA", "NIGER", "NIGERIA", "NIUE", "NORTH MACEDONIA", "NORWAY", "OMAN", "PAKISTAN",
+                "PALAU", "PALESTINE", "PANAMA", "PAPUA NEW GUINEA", "PARAGUAY", "PERU", "PHILIPPINES",
+                "POLAND", "PORTUGAL", "PUERTO RICO", "QATAR", "REUNION", "ROMANIA", "RUSSIAN FEDERATION",
+                "RWANDA", "SAINT BARTHELEMY", "SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA",
+                "SAINT KITTS AND NEVIS", "SAINT LUCIA", "SAINT MARTIN (FRENCH PART)", "SAINT PIERRE AND MIQUELON",
+                "SAINT VINCENT AND THE GRENADINES", "SAMOA", "SAN MARINO", "SAO TOME AND PRINCIPE", "SAUDI ARABIA",
+                "SENEGAL", "SERBIA", "SEYCHELLES", "SIERRA LEONE", "SINGAPORE", "SINT MAARTEN (DUTCH PART)",
+                "SLOVAKIA", "SLOVENIA", "SOLOMON ISLANDS", "SOMALIA", "SOUTH AFRICA", "SOUTH SUDAN", "SPAIN",
+                "SRI LANKA", "SUDAN", "SURINAME", "SWEDEN", "SWITZERLAND", "SYRIAN ARAB REPUBLIC", "TAIWAN",
+                "TAJIKISTAN", "TANZANIA", "THAILAND", "TIMOR-LESTE", "TOGO", "TOKELAU", "TONGA",
+                "TRINIDAD AND TOBAGO", "TUNISIA", "TURKEY", "TURKMENISTAN", "TUVALU", "UGANDA", "UKRAINE",
+                "UNITED ARAB EMIRATES", "UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND", "UK","UNITED STATES OF AMERICA", "UNITED STATES","US","URUGUAY", "UZBEKISTAN", "VANUATU", "VENEZUELA", "VIET NAM", "WESTERN SAHARA", "YEMEN", "ZAMBIA", "ZIMBABWE"
+            ];
+            
+            document.getElementById("country").addEventListener("input", function() {
+                let inputCountry = this.value.toUpperCase().trim();
+                const result = document.getElementById("result");
+        
+                if (countries.includes(inputCountry)) {
+                    result.textContent = "Country is valid!";
+                    result.style.color = "green";
+                    this.classList.add("valid");
+                    this.classList.remove("invalid");
+                } else {
+                    result.textContent = "Country is not valid!";
+                    result.style.color = "red";
+                    this.classList.add("invalid");
+                    this.classList.remove("valid");
+                }
+            });
+        </script>
+           
+           <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const phoneInput = document.getElementById('phone-number');
+                const phoneError = document.getElementById('phone-error');
+        
+                phoneInput.addEventListener('input', function () {
+                    const phoneValue = phoneInput.value;
+        
+                    // Check if the input is a number (allowing spaces, dashes, or parentheses for formatting)
+                    const isValidPhoneNumber = /^\+?[0-9\s\-\(\)]+$/.test(phoneValue);
+        
+                    if (!isValidPhoneNumber || phoneValue.trim() === '') {
+                        phoneError.style.display = 'block';
+                    } else {
+                        phoneError.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+        
+        
+{% endblock %}

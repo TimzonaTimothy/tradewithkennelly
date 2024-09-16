@@ -1,0 +1,206 @@
+{% extends "crypto/dashboard/base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+{% include 'crypto/alerts.html' %}
+        <!-- Dashboard Section -->
+        <section class="dashboard-section">
+            <div class="outer-container">
+                <div class="dashboard-content">
+                    <div class="pricing-dashboard">
+                        <div class="upper-box">
+                            <div class="title-box">
+                                <span>Investment Plan</span>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-lg-4 col-md-6 col-sm-12 pricing-block">
+                                <div class="pricing-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                                    data-wow-duration="1500ms">
+                                    <div class="inner-box">
+                                        <span class="upper-text">RUBY PLAN</span>
+                                        <h2 style="font-size: larger;">$5,000 - $15,000</h2>
+                                        <span class="key-text">Key Features :</span>
+                                        <ul class="feature-list clearfix">
+                                            <li>2.5% - 5% Weekly ROI</li>
+                                            <li>10% - 20%   Monthly  ROI</li>
+                                            <li>12 months Plan Duration</li>
+                                            <li>10% Affiliate Commission</li>
+                                        </ul> <br>
+                                        <a data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" style="cursor: pointer;" class="theme-btn"
+                                        data-plan="RUBY PLAN"
+                                        data-amount="$5,000 - $15,000"
+                                        data-interest="2.5"
+                                        data-min-amount="5000"
+                                        data-max-amount="15000"
+                                        >Invest Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 pricing-block">
+                                <div class="pricing-block-one wow fadeInUp animated" data-wow-delay="300ms"
+                                    data-wow-duration="1500ms">
+                                    <div class="inner-box">
+                                        <span class="upper-text">CONSERVATIVE PLAN</span>
+                                        <h2 style="font-size: larger;">$16,000 - $49,000</h2>
+                                        <span class="key-text">Key Features :</span>
+                                        <ul class="feature-list clearfix">
+                                            <li>2.5% - 5% Weekly ROI</li>
+                                            <li>10% - 20%   Monthly  ROI</li>
+                                            <li>12 months Plan Duration</li>
+                                            <li>10% Affiliate Commission</li>
+                                        </ul> <br>
+                                        <a data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" 
+                                        style="cursor: pointer;" 
+                                        class="theme-btn"
+                                        data-plan="CONSERVATIVE PLAN"
+                                        data-amount="$16,000 - $49,000"
+                                        data-interest="2.5"
+                                        data-min-amount="16000"
+                                        data-max-amount="49000"
+                                        >Invest Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 pricing-block">
+                                <div class="pricing-block-one wow fadeInUp animated" data-wow-delay="600ms"
+                                    data-wow-duration="1500ms">
+                                    <div class="inner-box">
+                                        <span class="upper-text">PLATINUM PLAN</span>
+                                        <h2 style="font-size: larger;">$50,000 - $250,000</h2>
+                                        <span class="key-text">Key Features :</span>
+                                        <ul class="feature-list clearfix">
+                                            <li>5% - 7% Weekly ROI</li>
+                                            <li>20% - 28%  Monthly  ROI</li>
+                                            <li>12 months Plan Duration</li>
+                                            <li>10% Affiliate Commission</li>
+                                        </ul> <br>
+                                        <a data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" 
+                                        style="cursor: pointer;" 
+                                        class="theme-btn"
+                                        data-plan="PLATINUM PLAN"
+                                        data-amount="$50,000 - $250,000"
+                                        data-interest="5"
+                                        data-min-amount="50000"
+                                        data-max-amount="250000"
+                                        >Invest Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <!-- Dashboard Section End -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+data-bs-backdrop="static" data-bs-keyboard="false">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">Confirm to invest on </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p class="text-center" id="planDetails"></p>
+            <p class="text-center" id="interestDetails"></p>
+            <p class="text-center" id="roiDetails"></p> <!-- New ROI display -->
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="hidden" name="plan" id="hiddenPlan">
+                    <input type="hidden" name="percent" id="hiddenInterest">
+                    <label>Select Wallet</label>
+                    <div class="select-box">
+                        <select class="wide" name="wallet" required>
+                            <option value="" selected disabled>Select Wallet</option>
+                            <option value="Balance">Balance ${{request.user.crypto_balance}}</option>
+                            <option value="Bitcoin">Bitcoin</option>
+                            <option value="Ethereum">Ethereum</option>
+                            <option value="USDT">USDT</option>
+                            <option value="Bitcoin Cash">Bitcoin Cash</option>
+                            <option value="BNB">BNB</option>
+                            <option value="LITECOIN">LITECOIN</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Amount</label>
+                    <input type="text" name="amount" placeholder="$00000" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">No</button>
+                    <button type="submit" class="theme-btn">Yes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var exampleModal = document.getElementById('exampleModal');
+        exampleModal.addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget; // Button that triggered the modal
+            var plan = button.getAttribute('data-plan');
+            var amount = button.getAttribute('data-amount');
+            var interest = button.getAttribute('data-interest');
+            var minAmount = button.getAttribute('data-min-amount');
+            var maxAmount = button.getAttribute('data-max-amount');
+    
+            // Update the modal's content
+            var modalTitle = exampleModal.querySelector('.modal-title');
+            var modalBody = exampleModal.querySelector('#planDetails');
+            var modalBodyInterest = exampleModal.querySelector('#interestDetails');
+            var roiDisplay = exampleModal.querySelector('#roiDetails'); // ROI Display
+    
+            modalTitle.textContent = 'Confirm to invest on ' + plan;
+            modalBody.textContent = 'Invest: ' + amount;
+            modalBodyInterest.textContent = 'Interest: ' + interest + '%';
+            
+    
+            // Set the values of the hidden input fields
+            var hiddenPlan = document.getElementById('hiddenPlan');
+            var hiddenInterest = document.getElementById('hiddenInterest');
+            hiddenPlan.value = plan;
+            hiddenInterest.value = interest;
+    
+            // Update the amount input field's attributes
+            var amountInput = exampleModal.querySelector('input[name="amount"]');
+            amountInput.setAttribute('min', minAmount);
+            amountInput.setAttribute('max', maxAmount);
+            amountInput.setAttribute('data-min-amount', minAmount);
+            amountInput.setAttribute('data-max-amount', maxAmount);
+    
+            // Add event listener to update ROI as user inputs the amount
+            amountInput.addEventListener('input', function() {
+                var minAmount = parseFloat(amountInput.getAttribute('data-min-amount'));
+                var maxAmount = parseFloat(amountInput.getAttribute('data-max-amount'));
+                var value = parseFloat(amountInput.value);
+    
+                if (value < minAmount || value > maxAmount) {
+                    amountInput.setCustomValidity('Please enter an amount between $' + minAmount + ' and $' + maxAmount + '.');
+                } else {
+                    amountInput.setCustomValidity('');
+                }
+    
+                // Calculate and display the ROI
+                var roi = value * (interest / 100);
+                roiDisplay.textContent = 'Estimated ROI: $' + roi.toFixed(2);
+            });
+        });
+    });
+</script>
+
+{% endblock %}

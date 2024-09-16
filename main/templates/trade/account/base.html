@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-us class="js">
+    {% load static %}
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>{% block title %}TradewithKennellysi{% endblock %}</title>
+    <!-- Meta Tag -->
+    <meta name="description" content="Avoninvestments is a private financial company engaged in investment activities, which are related to trading on financial markets and cryptocurrency exchanges performed by qualified professional traders."/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://tradewithKennellysi.net" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TradewithKennellysi" />
+    <meta property="og:description" content="TradewithKennellysi is a private financial company engaged in investment activities, which are related to trading on financial markets and cryptocurrency exchanges performed by qualified professional traders." />
+    <meta property="og:url" content="https://tradewithKennellysi.net" />
+    <meta property="og:site_name" content="Avoninvestments" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="author" content="Avoninvestments">
+    <!-- Site Favicon-->
+    <link rel="shortcut icon" href="https://avoninvestments.net/logo/657013c59d18f-1701843909.png">
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="{% static 'auth/assets/css/dashlite.min.css' %}">
+    <link id="skin-default" rel="stylesheet" href="{% static 'auth/assets/css/skins/theme-blue.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js?version=1725314548"></script>
+    <style type="text/css">
+      /* The message box is shown when the user clicks on the password field */
+      #message {
+        display:none;
+        /*background: #f1f1f1;*/
+        color: #000;
+        position: relative;
+        padding: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      #message p {
+        padding: 10px 35px;
+        font-size: 18px;
+      }
+
+      /* Add a green text color and a checkmark when the requirements are right */
+      .valid {
+        color: green;
+      }
+
+      .valid:before {
+        position: relative;
+        left: -35px;
+        content: "✔";
+      }
+
+      /* Add a red text color and an "x" icon when the requirements are wrong */
+      .invalid {
+        color: red;
+      }
+
+      .invalid:before {
+        position: relative;
+        left: -35px;
+        content: "✖";
+      }
+      /* label {
+        color: #ffffff!important;
+      } */
+    </style>
+    <style>
+      .mgm {
+        border-radius: 7px;
+        position: fixed;
+        z-index: 90;
+        bottom: 80px;
+        right: 50px;
+        background: #000000;
+        padding: 20px 27px;
+        box-shadow: 0px 5px 13px 0px rgba(0,0,0,.3);
+      }
+      .mgm a {
+        font-weight: 700;
+        display: block;
+        color:#000052;
+      }
+      .mgm a, .mgm a:active {
+        transition: all .2s ease;
+        color:#000052;
+      }
+    </style>
+  </head>
+  <body class="nk-body bg-white npc-default pg-auth dark-mode" theme="dark">
+    <div class="nk-app-root">
+      <!-- main @s -->
+      <div class="nk-main ">
+        <!-- wrap @s -->
+        <div class="nk-wrap nk-wrap-nosidebar">
+          <!-- content @s -->
+          <div class="nk-content "><div class="nk-block nk-block-middle nk-auth-body  wide-xs">
+    <div class="card">
+                      
+        {% block content %}{% endblock %}
+       <div class="nk-footer nk-auth-footer-full">
+                            <div class="container wide-lg">
+                                <div class="row g-3">
+                                    <div class="col-lg-12">
+                                        <div class="nk-block-content text-center">
+                                            <p class="text-soft"> © 2021 - <span class="year"></span> tradewithKennellysi Inc, All Rights Reserved.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- content @e -->
+                </div>
+                <!-- wrap @e -->
+            </div>
+            <!-- main @e -->
+        </div>
+        <!-- app-root @e -->
+
+
+
+        <script>
+            const date = new Date();
+         document.querySelector('.year').innerHTML = date.getFullYear();
+         </script>
+<!-- 
+        <div class="mgm" style="display: none;">
+            <div class="txt" style="color:#ffffff;">Someone from <b></b> just earned
+                <a href="javascript:void(0);" onclick="javascript:void(0);"></a>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var listNames = ['Michael', 'Christopher', 'Jessica', 'Matthew', 'Ashley', 'Jennifer', 'Joshua', 'Amanda', 'Daniel', 'David', 'James', 'Robert', 'John', 'Joseph', 'Andrew', 'Ryan', 'Brandon', 'Jason', 'Justin', 'Sarah', 'William', 'Jonathan', 'Stephanie', 'Brian', 'Nicole', 'Nicholas', 'Anthony', 'Heather', 'Eric', 'Elizabeth', 'Adam', 'Megan', 'Melissa', 'Kevin', 'Steven', 'Thomas', 'Timothy', 'Christina', 'Kyle', 'Rachel', 'Laura', 'Lauren', 'Amber', 'Brittany', 'Danielle', 'Richard', 'Kimberly', 'Jeffrey', 'Amy', 'Crystal', 'Michelle', 'Tiffany', 'Jeremy', 'Benjamin', 'Mark', 'Emily', 'Aaron', 'Charles', 'Rebecca', 'Jacob', 'Stephen', 'Patrick', 'Sean', 'Erin', 'Zachary', 'Jamie', 'Kelly', 'Samantha', 'Nathan', 'Sara', 'Dustin', 'Paul', 'Angela', 'Tyler', 'Scott', 'Katherine', 'Andrea', 'Gregory', 'Erica', 'Mary', 'Travis', 'Lisa', 'Kenneth', 'Bryan', 'Lindsey', 'Kristen', 'Jose', 'Alexander', 'Jesse', 'Katie', 'Lindsay', 'Shannon', 'Vanessa', 'Courtney', 'Christine', 'Alicia', 'Cody', 'Allison', 'Bradley', 'Samuel', 'Shawn', 'April', 'Derek', 'Kathryn', 'Kristin', 'Chad', 'Jenna', 'Tara', 'Maria', 'Krystal', 'Jared', 'Anna', 'Edward', 'Julie', 'Peter', 'Holly', 'Marcus', 'Kristina', 'Natalie', 'Jordan', 'Victoria', 'Jacqueline', 'Corey', 'Keith', 'Monica', 'Juan', 'Donald', 'Cassandra', 'Meghan', 'Joel', 'Shane', 'Phillip', 'Patricia', 'Brett', 'Ronald', 'Catherine', 'George', 'Antonio', 'Cynthia', 'Stacy', 'Kathleen', 'Raymond', 'Carlos', 'Brandi', 'Douglas', 'Nathaniel', 'Ian', 'Craig', 'Brandy', 'Alex', 'Valerie', 'Veronica', 'Cory', 'Whitney', 'Gary'];
+            var listCountries = ['Argentina', 'USA', 'Germany', 'France', 'Italy', 'South Korea', 'Australia', 'Norway', 'Canada', 'Argentina', 'Saudi Arabia', 'Mexico', 'Spain', 'Austria', 'Venezuela', 'South Africa', 'Sweden', 'South Korea', 'China', 'Italy', 'Germany', 'United Kingdom', 'Bahrain', 'Greece', 'Cuba', 'Bulgaria', 'Portugal', 'Austria', 'Cyprus', 'Panama', 'Asia', 'Norway', 'Netherlands', 'Switzerland', 'Belgium', 'Israel', 'Cyprus','Spain','Norway'];
+            var listPlans = ['$10,000', '$10,500', '$11,000', '$11,500', '$12,000', '$12,500', '$13,000', '$13,500', '$14,000', '$14,500', '$15,000', '$15,500', '$16,000', '$16,500', '$17,000', '$17,500', '$18,000', '$18,500', '$19,000', '$19,500', '$20,000', '$21,000', '21,050', '30,000'];
+            var listTypes = ['earned', 'invested'];
+            interval = 8000;
+            var run = setInterval(request, interval);
+
+            function request() {
+                clearInterval(run);
+                interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+                var name = listNames[Math.floor(Math.random() * listNames.length)];
+                var country = listCountries[Math.floor(Math.random() * listCountries.length)];
+                var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
+                var type = listTypes[Math.floor(Math.random() * listTypes.length)];
+                var msg = '' + name + ' from <b>' + country + '</b> just ' + type + ' <a href="javascript:void(0);" onclick="javascript:void(0);">' + plan + ' </a>';
+                $(".mgm .txt").html(msg);
+                $(".mgm").stop(true).fadeIn(300);
+                window.setTimeout(function() {
+                $(".mgm").stop(true).fadeOut(300);
+                }, 6000);
+                run = setInterval(request, interval);
+            }
+        </script> -->
+
+
+        <!-- JavaScript -->
+        <script src="{% static 'auth/assets/js/bundle.js' %}"></script>
+        <script src="{% static 'auth/assets/js/scripts.js' %}"></script>
+        <script type="text/javascript">
+            // Check if user email address is available
+            $(document).ready(function() {
+
+                //Verify if user email address is already existing
+                $('#email_address').keyup (function(){
+                var email_address = $('#email_address').val();
+                $("#loaderIcon1").show();
+                var xmlhttp=new XMLHttpRequest();
+                xmlhttp.onreadystatechange=function() {
+                    if (this.readyState==4 && this.status==200) {
+                    var feedback_data = this.responseText;
+                    if (feedback_data == "1") {
+                        $("#loaderIcon1").hide(500);
+                        $('#email_address').css('border', '1px solid red');
+                        $("#username-status").html('Email Address unavailable').css('color', 'red');
+                        $("#signup_btn").prop("disabled", true);
+                    } else if (feedback_data == "0") {
+                        $("#loaderIcon1").hide(500);
+                        $('#email_address').css('border', '1px solid green');
+                        $("#username-status").html('Email Address Available').css('color', 'green');
+                    } else {
+                        $("#loaderIcon1").hide(500);
+                        $('#email_address').css('border', '1px solid red');
+                        $("#username-status").html('Email Address unavailable').css('color', 'red');
+                    } 
+                    }
+                }
+                xmlhttp.open("GET","components/check_availability.php?email="+email_address,true);
+                xmlhttp.send();
+                });
+            });
+
+            //Password requirements validation
+            $("#password2").on("keyup", function () {
+                if ($("#password").val() == $("#password2").val()) {
+                $('#password').css('border', '1px solid green');
+                $('#password2').css('border', '1px solid green');
+                $('#password_message').hide();
+                }else{
+                $('#password').css('border', '1px solid red');
+                $('#password2').css('border', '1px solid red');
+                $('#password_message').show();
+                $('#password_message').html('Password and confirm password do not match').css('color', 'red');
+                }
+            });
+
+            var myInput = document.getElementById("password");
+            var letter = document.getElementById("letter");
+            var capital = document.getElementById("capital");
+            var number = document.getElementById("number");
+            var length = document.getElementById("length");
+
+            // When the user clicks on the password field, show the message box
+            myInput.onfocus = function() {
+                document.getElementById("message").style.display = "block";
+            }
+
+            // When the user clicks outside of the password field, hide the message box
+            myInput.onblur = function() {
+                document.getElementById("message").style.display = "none";
+            }
+
+            // When the user starts to type something inside the password field
+            myInput.onkeyup = function() {
+                // Validate lowercase letters
+                var lowerCaseLetters = /[a-z]/g;
+                if(myInput.value.match(lowerCaseLetters)) {  
+                letter.classList.remove("invalid");
+                letter.classList.add("valid");
+                } else {
+                letter.classList.remove("valid");
+                letter.classList.add("invalid");
+                }
+                
+                // Validate capital letters
+                var upperCaseLetters = /[A-Z]/g;
+                if(myInput.value.match(upperCaseLetters)) {  
+                capital.classList.remove("invalid");
+                capital.classList.add("valid");
+                } else {
+                capital.classList.remove("valid");
+                capital.classList.add("invalid");
+                }
+
+                // Validate numbers
+                var numbers = /[0-9]/g;
+                if(myInput.value.match(numbers)) {  
+                number.classList.remove("invalid");
+                number.classList.add("valid");
+                } else {
+                number.classList.remove("valid");
+                number.classList.add("invalid");
+                }
+                
+                // Validate length
+                if(myInput.value.length >= 5) {
+                length.classList.remove("invalid");
+                length.classList.add("valid");
+                } else {
+                length.classList.remove("valid");
+                length.classList.add("invalid");
+                }
+            }
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                //Disable submit button until all form input have data
+                validate();
+                $('input').on('keyup', validate);
+
+                function validate() {
+                    var inputsWithValues = 0;
+                    // get all input fields except for type='submit'
+                    var myInputs = $("input:not([type='submit'])");
+                    myInputs.each(function(e) {
+                        // if it has a value, increment the counter
+                        if ($(this).val()) {
+                            inputsWithValues += 1;
+                        }
+                    });
+                    if (inputsWithValues == myInputs.length) {
+                        $("input[type=submit]").prop("disabled", false);
+                    } else {
+                        $("input[type=submit]").prop("disabled", true);
+                    }
+                }
+            });
+        </script>
+        <!-- sweetalert js -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.2/dist/sweetalert2.all.min.js?version=1725314548"></script>
+        <!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js?version=1725314548"></script>
+        <script> 
+            function onlyNumberKey(evt) { 
+                // Only ASCII charactar in that range allowed 
+                var ASCIICode = (evt.which) ? evt.which : evt.keyCode 
+                if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) 
+                return false; 
+                return true; 
+            } 
+        </script>
+        <script>
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                        pageLanguage: 'en'
+                    },
+                    'google_translate_element'
+                );
+            }
+        </script>
+        <!-- Array notification function -->
+                <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </body>
+
+</html>

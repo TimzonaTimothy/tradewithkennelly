@@ -1,0 +1,65 @@
+{% extends "crypto/dashboard/base.html" %}
+{% load static %}
+
+
+{% block content %}
+{% include 'crypto/alerts.html' %}
+
+        <!-- Dashboard Section -->
+        <section class="dashboard-section">
+            <div class="outer-container">
+                <div class="dashboard-content">
+                    <div class="table-content">
+                        <div class="title-box">Transaction History</div>
+                        <div class="dashboard-table">
+                            <table id="">
+                                <thead>
+                                    <tr>
+                                        <th>Invoice Id</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Wallet Type</th>
+                                        <th>Transaction Type</th>
+                                        <th>Detail</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if transactions %}
+                                        {% for transaction in transactions %}
+                                            <tr>
+                                                <td class="invoice-id"><span>#{{transaction.transaction_id}}</span></td>
+                                                
+                                                <td class="date"><img src="{% static 'assets/images/icons/icon-46.svg' %}" alt="">{{transactions.created_at}}</td>
+                                                <td>${{transaction.amount}}</td>
+                                        
+                                                <td>{{transaction.Wallet_Type}}</td>
+                                                <td>{{transaction.transaction_type}}</td>
+                                                <td>{{transaction.detail}}</td>
+                                            </tr>
+                                        
+                                        {% endfor %}
+                                    {% else %}
+                                        <p>You have not made any transaction</p>
+                                    {% endif %}
+                                    
+                                </tbody>
+                            </table> <br>
+                            {% if transactions > 5 %}
+                            <div class="btn-box">
+                                <a href="{% url 'payments:transactions' %}"><button type="submit" class="theme-btn btn-one">View All</button></a>
+                            </div>
+                            {% elif not transactions %}
+                            <div class="btn-box">
+                                <a href="{% url 'payments:deposit' %}"><button type="submit" class="theme-btn btn-one">Deposit Now</button></a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Dashboard Section End -->
+
+
+
+{% endblock %}

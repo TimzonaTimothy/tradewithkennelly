@@ -1,0 +1,78 @@
+{% extends 'trade/account/base.html' %}
+{% block title %}Login{% endblock %}
+{% load static %}
+{% block content %}
+
+
+        <div class="card-inner card-inner-lg">
+            <div class="nk-block-head">
+                <div class="nk-block-head-content">
+                    <div class="brand-logo mx-5 mt-5 text-center">
+                        <a href="/" class="logo-link">
+                            <!-- <img class="logo-light logo-img logo-img-lg" src="https://avoninvestments.net/logo/657013015db12-1701843713.png" srcset="https://avoninvestments.net/logo/657013015db12-1701843713.png 2x" alt="Avoninvestments"> -->
+                            <!-- <img class="logo-dark logo-img logo-img-lg" src="https://avoninvestments.net/logo/657012987493d-1701843608.png" srcset="https://avoninvestments.net/logo/657012987493d-1701843608.png 2x" alt="Avoninvestments"> -->
+                            <h4>TradewithKennellysi</h4>
+                        </a>
+                    </div>
+                    <center>
+                        <h4 class="nk-block-title mt-5">Sign-In</h4>
+                        <div class="nk-block-des">
+                            <p>Access the dashboard panel using your email/username and password.</p>
+                        </div>
+                    </center>        
+                </div>
+            </div><!-- .nk-block-head -->
+            <!-- Session Notifications -->
+            {% include 'trade/alerts.html' %}
+                 <form class="is-alter form-validate"  method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <label class="form-label" for="default-01">Email or Username</label>
+                        </div>
+                        <div class="form-control-wrap">
+                            <div class="form-icon form-icon-left">
+                                <em class="icon ni ni-user-alt"></em>
+                            </div>
+                            <input type="text" name="username_or_email" class="form-control form-control-lg" id="default-01" placeholder="Enter your email address or username" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <label class="form-label" for="password">Password</label>
+                            <a class="link link-primary link-sm" href="{% url 'accounts:forgetpassword' %}">Forgot Password?</a>
+                        </div>
+                        <div class="form-control-wrap">
+                            <a href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password">
+                                <em class="passcode-icon icon-show icon ni ni-eye"></em>
+                                <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
+                            </a>
+                            <div class="form-icon form-icon-left">
+                                <em class="icon ni ni-lock"></em>
+                            </div>
+                            <input type="password" name="password" class="form-control form-control-lg" id="password" placeholder="Enter your password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" name="login_btn" class="btn btn-lg btn-primary btn-block">Sign in</button>
+                    </div>
+                </form>
+                                        <div class="form-note-s2 text-center pt-4"> 
+                    New on our platform? 
+                    <a href="{% url 'accounts:sign_up' %}">
+                        <strong>Create an account</strong>
+                    </a>
+                </div>
+                        
+                <!-- <div class="text-center pt-4 pb-3">
+                <h6 class="overline-title overline-title-sap"><span>OR</span></h6>
+            </div>
+            <ul class="nav justify-center gx-4">
+                <li class="nav-item"><a class="nav-link" href="#">Facebook</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Google</a></li>
+            </ul> -->
+        </div>
+    </div>
+</div>                        
+
+{% endblock %}

@@ -1,0 +1,274 @@
+{% extends "crypto/base.html" %}
+{% load static %}
+{% block title %}Plans{% endblock %}
+{% block content %}
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <div class="pattern-layer">
+                <div class="pattern-1" data-parallax='{"x": -100}'
+                    style="background-image: url({% static 'assets/images/shape/shape-4.png' %});"></div>
+                <div class="pattern-2" data-parallax='{"x": 100}'
+                    style="background-image: url({% static 'assets/images/shape/shape-9.png' %});"></div>
+                <div class="pattern-3" style="background-image: url({% static 'assets/images/shape/shape-15.png' %});"></div>
+            </div>
+            <div class="auto-container">
+                <div class="section-title text-center">
+                    <span class="sub-title">Investment Plans</span>
+                    <h2>Choose Your Best <br>Plan For Investing</h2>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-6 col-sm-12 pricing-block">
+                        <div class="pricing-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <span class="upper-text">ELEMENTARY PLAN</span>
+                                <h2 style="font-size: larger;">$100.00 - $1,000.00</h2>
+                                
+                                <!-- <ul class="list-item clearfix">
+                                  
+                                    <li>Return 4.00%</li>
+                                </ul> -->
+                                <span class="key-text">Key Features :</span>
+                                <ul class="feature-list clearfix">
+                                    <li>Return 4.00%</li>
+                                    <li>Every 1 Day</li>
+                                    <li>Total 4% + Capital</li>
+                                    <li>General Support</li>
+                                </ul> <br>
+                                <a href="{% if user.isauthenticated %}{% url 'payments:deposit' %}{% else %}{% url 'accounts:sign_in' %}{% endif %}" class="theme-btn">Invest Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 pricing-block">
+                        <div class="pricing-block-one wow fadeInUp animated" data-wow-delay="300ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <span class="upper-text">STANDARD PLAN</span>
+                                <h2 style="font-size: larger;">$1,000.00 - $3,000.00</h2>
+                                <!-- <a href="index.html" class="theme-btn">Get It Now</a>
+                                <ul class="list-item clearfix">
+                                    <li>5 business account</li>
+                                    <li>60 Days Long</li>
+                                </ul> -->
+                                <span class="key-text">Key Features :</span>
+                                <ul class="feature-list clearfix">
+                                    <li>Return 6.00%</li>
+                                    <li>Every 20 Hours</li>
+                                    <li>Total 6% + Capital</li>
+                                    <li>General Support</li>
+                                </ul> <br>
+                                <a href="{% if user.isauthenticated %}{% url 'payments:deposit' %}{% else %}{% url 'accounts:sign_in' %}{% endif %}" class="theme-btn">Invest Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 pricing-block">
+                        <div class="pricing-block-one wow fadeInUp animated" data-wow-delay="600ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <span class="upper-text">ENHANCED PLAN</span>
+                                <h2 style="font-size: larger;">$3,000.00 - $8,000.00</h2>
+                                <!-- <a href="index.html" class="theme-btn">Get It Now</a>
+                                <ul class="list-item clearfix">
+                                    <li>10 business account</li>
+                                    <li>90 Days Long</li>
+                                </ul> -->
+                                <span class="key-text">Key Features :</span>
+                                <ul class="feature-list clearfix">
+                                    <li>Return 8.00%</li>
+                                    <li>Every 48 Hours</li>
+                                    <li>Total 8% + Capital</li>
+                                    <li>General Support</li>
+                                </ul> <br>
+                                <a href="{% if user.isauthenticated %}{% url 'payments:deposit' %}{% else %}{% url 'accounts:sign_in' %}{% endif %}" class="theme-btn">Invest Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 pricing-block">
+                        <div class="pricing-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <span class="upper-text">COMPOUND PLAN VIP</span>
+                                <h2 style="font-size: larger;">$5,000.00 - $7,000.00</h2>
+                                
+                                <!-- <ul class="list-item clearfix">
+                                  
+                                    <li>Return 4.00%</li>
+                                </ul> -->
+                                <span class="key-text">Key Features :</span>
+                                <ul class="feature-list clearfix">
+                                    <li>Return 5.00%</li>
+                                    <li>Every 8 Hours</li>
+                                    <li>Total 5% + Capital</li>
+                                    <li>General Support</li>
+                                </ul> <br>
+                                <a href="{% if user.isauthenticated %}{% url 'payments:deposit' %}{% else %}{% url 'accounts:sign_in' %}{% endif %}" class="theme-btn">Invest Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 pricing-block">
+                        <div class="pricing-block-one wow fadeInUp animated" data-wow-delay="300ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <span class="upper-text">HIGH RETURN VIP</span>
+                                <h2 style="font-size: larger;">$8,000.00 - $10,000.00</h2>
+                                <!-- <a href="index.html" class="theme-btn">Get It Now</a>
+                                <ul class="list-item clearfix">
+                                    <li>5 business account</li>
+                                    <li>60 Days Long</li>
+                                </ul> -->
+                                <span class="key-text">Key Features :</span>
+                                <ul class="feature-list clearfix">
+                                    <li>Return 7.00%</li>
+                                    <li>Every 10 Hours</li>
+                                    <li>Total 7% + Capital</li>
+                                    <li>General Support</li>
+                                </ul> <br>
+                                <a href="{% if user.isauthenticated %}{% url 'payments:deposit' %}{% else %}{% url 'accounts:sign_in' %}{% endif %}" class="theme-btn">Invest Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 pricing-block">
+                        <div class="pricing-block-one wow fadeInUp animated" data-wow-delay="600ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <span class="upper-text">POTENTIAL PLAN VIP</span>
+                                <h2 style="font-size: larger;">$12,000.00 - $14,000.00</h2>
+                                <!-- <a href="index.html" class="theme-btn">Get It Now</a>
+                                <ul class="list-item clearfix">
+                                    <li>10 business account</li>
+                                    <li>90 Days Long</li>
+                                </ul> -->
+                                <span class="key-text">Key Features :</span>
+                                <ul class="feature-list clearfix">
+                                    <li>Return 10.00%</li>
+                                    <li>Every 12 Hours</li>
+                                    <li>Total 10% + Capital</li>
+                                    <li>General Support</li>
+                                </ul> <br>
+                                <a href="{% if user.isauthenticated %}{% url 'payments:deposit' %}{% else %}{% url 'accounts:sign_in' %}{% endif %}" class="theme-btn">Invest Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 pricing-block">
+                        <div class="pricing-block-one wow fadeInUp animated" data-wow-delay="600ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <span class="upper-text">ADVANCED PLAN VIP</span>
+                                <h2 style="font-size: larger;">$15,000.00 - $99,999,999.00</h2>
+                                <!-- <a href="index.html" class="theme-btn">Get It Now</a>
+                                <ul class="list-item clearfix">
+                                    <li>10 business account</li>
+                                    <li>90 Days Long</li>
+                                </ul> -->
+                                <span class="key-text">Key Features :</span>
+                                <ul class="feature-list clearfix">
+                                    <li>Return 15.00%</li>
+                                    <li>Every 15 Hours</li>
+                                    <li>Total 15% + Capital</li>
+                                    <li>General Support</li>
+                                </ul> <br>
+                                <a href="{% if user.isauthenticated %}{% url 'payments:deposit' %}{% else %}{% url 'accounts:sign_in' %}{% endif %}" class="theme-btn">Invest Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Pricing Section End -->
+
+
+        <!-- Faq Section -->
+        <section class="faq-section">
+            <div class="pattern-layer" style="background-image: url({% static 'assets/images/shape/shape-19.png' %});"></div>
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-5 col-md-12 col-sm-12 content-column">
+                        <div class="content-box">
+                            <div class="section-title">
+                                <span class="sub-title">FAQ</span>
+                                <h2>Frequently <br>Asked Question</h2>
+                            </div>
+                            <div class="text-box">
+                                <p>We answer some of your Frequently Asked Questions regarding our platform. 
+                                    <br>If you have a query that is not answered here, Please contact us.
+                                </p>
+                                <a href="{% url 'contact' %}" class="theme-btn">Contact us</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-12 col-sm-12 accordion-column">
+                        <div class="accordion-inner">
+                            <div class="content-shape">
+                                <div class="shape-1 zoom-fade"
+                                    style="background-image: url({% static 'assets/images/shape/shape-17.png' %});"></div>
+                                <div class="shape-2 zoom-fade"
+                                    style="background-image: url({% static 'assets/images/shape/shape-18.png' %});"></div>
+                            </div>
+                            <ul class="accordion-box">
+                                <li class="accordion block active-block">
+                                    <div class="acc-btn active">
+                                        <h3>When can i deposit/withdraw from my investment account?</h3>
+                                    </div>
+                                    <div class="acc-content current">
+                                        <div class="content">
+                                            <p>Deposit and withdrawal are available for at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. 
+                                                The available amount is shown in your dashboard on the main page of Investing platform. 
+                                                Deposit and withdrawal are available for at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. 
+                                                The available amount is shown in your dashboard on the main page of Investing platform.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="accordion block">
+                                    <div class="acc-btn">
+                                        <h3>How do i check my account balance?</h3>
+                                    </div>
+                                    <div class="acc-content">
+                                        <div class="content">
+                                            <p>You can see this anytime on your accounts dashboard. You can see this anytime on your accounts dashboard.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="accordion block">
+                                    <div class="acc-btn">
+                                        <h3>I forgot my password what should i do?</h3>
+                                    </div>
+                                    <div class="acc-content">
+                                        <div class="content">
+                                            <p>Visit the password reset page, type in your email address and click the `Reset` button. 
+                                                Visit the password reset page, type in your email address and click the `Reset` button.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="accordion block">
+                                    <div class="acc-btn">
+                                        <h3>How will i know that the withdrawal has been successful?</h3>
+                                    </div>
+                                    <div class="acc-content">
+                                        <div class="content">
+                                            <p>You will get an automatic notification once we send the funds and you can always check your transactions or account balance. 
+                                                Your chosen payment system dictates how long it will take for the funds to reach you. 
+                                                You will get an automatic notification once we send the funds and you can always check your transactions or account balance. 
+                                                Your chosen payment system dictates how long it will take for the funds to reach you.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="accordion block">
+                                    <div class="acc-btn">
+                                        <h3>How much can i withdraw?</h3>
+                                    </div>
+                                    <div class="acc-content">
+                                        <div class="content">
+                                            <p>You can withdraw the full amount of your account balance minus the funds that are used currently for supporting opened positions.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Faq Section End -->
+
+{% endblock %}

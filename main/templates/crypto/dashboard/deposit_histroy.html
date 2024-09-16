@@ -1,0 +1,78 @@
+{% extends "crypto/dashboard/base.html" %}
+{% load static %}
+
+
+{% block content %}
+{% include 'crypto/alerts.html' %}
+
+        <!-- Dashboard Section -->
+        <section class="dashboard-section">
+            <div class="outer-container">
+                <div class="dashboard-content">
+                   
+                  
+                    <div class="table-content">
+                        <div class="title-box">Deposit History</div>
+                        <div class="dashboard-table">
+                            <table id="">
+                                <thead>
+                                    <tr>
+                                        <th>Invoice Id</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Wallet Type</th>
+                                        <th>Detail</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if orders %}
+                                        {% for order in orders %}
+                                            <tr>
+                                                <td class="invoice-id"><span>#{{order.transaction_id}}</span></td>
+                                                
+                                                <td class="date"><img src="{% static 'assets/images/icons/icon-46.svg' %}" alt="">{{order.created_at}}</td>
+                                                <td>${{order.amount}}</td>
+                                                {% if order.status == 'Pending' %}
+                                                <td><span class="status-text pending">Pending</span></td>
+                                                {% elif order.status == 'Approved' %}
+                                                <td><span class="status-text" style="position: relative;
+                                                    display: inline-block;
+                                                    font-size: 14px;
+                                                    line-height: 20px;
+                                                    font-weight: 700;
+                                                    padding: 12.5px 40px;
+                                                    border-radius: 50px;color: #2600ff;background: rgba(21, 21, 225, 0.1);">
+                                                    Approved</span></td>
+                                                {% elif order.status == 'Completed' %}
+                                                <td><span class="status-text complete">Completed</span></td>
+                                                {% elif order.status == 'Cancelled' %}
+                                                <td><span class="status-text cancel">Cancelled</span></td>
+                                                {% endif %}
+                                                <td>{{order.wallet_type}}</td>
+                                                <td>{{order.detail}}</td>
+                                            </tr>
+                                        
+                                        {% endfor %}
+                                    {% else %}
+                                        <p>No Deposit</p>
+                                    {% endif %}
+                                    
+                                </tbody>
+                            </table> <br>
+                            {% if orders > 5 %}
+                            <div class="btn-box">
+                                <a href="{% url 'payments:transactions' %}"><button type="submit" class="theme-btn btn-one">View All</button></a>
+                            </div>
+                            
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Dashboard Section End -->
+
+      
+            
+{% endblock %}

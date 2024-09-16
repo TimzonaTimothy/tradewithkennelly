@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <title>Dasboard</title>
+
+    <!-- Fav Icon -->
+    <!-- <link rel="icon" href="{% static 'assets/images/favicon.ico' %}" type="image/x-icon"> -->
+    <link rel="shortcut icon" href="{% static 'img/fav.png' %}">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets List -->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/owl.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/jquery.fancybox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/font-awesome-all.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/flaticon.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/nice-select.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/odometer.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/data-table.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <style>
+
+/*         
+        .float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	left:35px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+ */
+
+/* Hide the dropdown by default */
+.dashboard-category-list .dropdown-menu {
+    display: none;
+    position: absolute;
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Show the dropdown on hover */
+.dashboard-category-list .dropdown:hover .dropdown-menu {
+    display: block;
+    width: 100%;
+}
+
+/* Style the dropdown items */
+.dashboard-category-list .dropdown-menu li {
+    padding: 5px;
+    background-color: #2a2d3c;
+    
+}
+
+.dashboard-category-list .dropdown-menu li a {
+    color: #deb547;
+    text-decoration: none;
+}
+
+.dashboard-category-list .dropdown-menu li a:hover {
+    color: #deb547;
+}
+
+
+    </style>
+</head>
+
+
+<!-- Boxed Wrapper -->
+
+<body>
+
+    <div class="boxed_wrapper">
+
+
+        <!-- Preloader -->
+        <!-- <div class="loader-wrap">
+            <div class="preloader">
+                <div id="handle-preloader" class="handle-preloader">
+                    <div class="animation-preloader">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Preloader End -->
+
+
+        <!-- Dashboard Header -->
+        <header class="dashboard-header">
+            <div class="outer-container">
+                <figure class="logo-box">
+                    <a href="{% url 'home' %}">
+                        <!-- <img src="{% static 'logo-white.png' %}" style="width: 200px;height: 60px;" alt=""> -->
+                        <h4>TradewithKennellysi</h4>
+                    </a>
+                </figure>
+                <div class="header-content">
+                    <div class="left-content">
+                        <div class="menu-text mobile-nav-toggler">
+                            <img src="{% static 'assets/images/icons/icon-23.svg' %}" alt="">
+                            Dashboard
+                        </div>
+                        <!-- <div class="search-box">
+                            <form method="post" action="#">
+                                <div class="form-group">
+                                    <div class="icon-box"><img src="{% static 'assets/images/icons/icon-25.svg' %}" alt=""></div>
+                                    <input type="search" name="search-field" placeholder="Search Here" required>
+                                    <button type="submit"><img src="{% static 'assets/images/icons/icon-24.svg' %}" alt=""></button>
+                                </div>
+                            </form>
+                        </div> -->
+                    </div>
+                    <div class="right-content">
+                        <!-- <div class="notification-box"><button><img src="{% static 'assets/images/icons/icon-26.svg' %}" alt=""><span
+                                    class="alart"></span></button></div> -->
+                        <div class="admin-box">
+                            <span>{{request.user.username}}</span>
+                            <figure class="image-box"><img src="{% static 'assets/images/resource/admin.png' %}" alt=""></figure>
+                            <ul class="dropdown-box">
+                                <li><a href="{% url 'accounts:edit_profile' %}"><img src="{% static 'assets/images/icons/icon-28.svg' %}" alt="">Profile</a>
+                                </li>
+                                <li><a href="{% url 'accounts:change_password' %}"><img src="{% static 'assets/images/icons/icon-29.svg' %}" alt="">Password</a>
+                                </li>
+                                <li><a href="{% url 'accounts:logout' %}"><img src="{% static 'assets/images/icons/icon-30.svg' %}" alt="">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Dashboard Header End -->
+
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu dashboard-mobile-menu">
+            <div class="close-btn"><i class="fas fa-times"></i></div>
+            <div class="dashboard-sidebar">
+                <figure class="logo-box">
+                    <a href="{% url 'home' %}">
+                        <!-- <img src="{% static 'logo-white.png' %}" alt=""> -->
+                        <h4>TradewithKennellysi</h4>
+                    </a>
+                </figure>
+                <ul class="dashboard-category-list">
+                    <li><a href="{% url 'accounts:dashboard' %}" class="{% if '/dashboard' == request.path %}current{% endif %}"><img src="{% static 'assets/images/icons/icon-31.svg' %}"alt="">Dashboard</a></li>
+                    <!-- <li><a href="{% url 'payments:deposit' %}" class="{% if '/crypto-deposit/' == request.path %}current{% endif %}"><img src="{% static 'assets/images/icons/icon-32.svg' %}" alt="">Deposit</a></li> -->
+                    <!-- <li class="dropdown">
+                        <a>
+                            <img src="{% static 'assets/images/icons/icon-32.svg' %}" alt="">Deposit
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'payments:deposit' %}">Make Deposit</a></li>
+                            <li><a href="{% url 'payments:deposit_histroy' %}">Deposit History</a></li>
+                            
+                        </ul>
+                    </li> -->
+                    <!-- <li><a href="{% url 'payments:investments' %}" class="{% if '/investments' == request.path %}current{% endif %}"><img src="{% static 'assets/images/icons/icon-37.svg' %}" alt="">Investment</a></li> -->
+                    <li class="dropdown">
+                        <a>
+                            <img src="{% static 'assets/images/icons/icon-37.svg' %}" alt="">Investment
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'payments:investments' %}">Invest</a></li>
+                            <li><a href="{% url 'payments:investments_histroy' %}">Investment History</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!-- <li><a href="{% url 'payments:withdraw' %}" class="{% if '/withdraw' == request.path %}current{% endif %}"><img src="{% static 'assets/images/icons/icon-35.svg' %}" alt="">Withdraw</a></li> -->
+                    <li class="dropdown">
+                        <a>
+                            <img src="{% static 'assets/images/icons/icon-35.svg' %}" alt="">Withdrawal
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'payments:withdraw' %}">Make Withdrawal</a></li>
+                            <li><a href="{% url 'payments:withdraw_histroy' %}">Withdrawal History</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'payments:transactions' %}" class="{% if '/transactions' == request.path %}current{% endif %}"><img src="{% static 'assets/images/icons/icon-40.svg' %}" alt="">Transactions</a></li>
+                    <li><a href="{% url 'accounts:ref' %}" class="{% if '/ref' == request.path %}current{% endif %}"><img src="{% static 'assets/images/icons/icon-36.svg' %}" alt="">Referrals</a></li>
+                    <li><a href="{% url 'accounts:edit_profile' %}" class="{% if '/edit_profile' == request.path %}current{% endif %}"><img src="{% static 'assets/images/icons/icon-settings.svg' %}" alt="">Profile Setting</a></li>
+                    <li><a href="{% url 'accounts:change_password' %}" class="{% if '/change_password' == request.path %}current{% endif %}"><img src="{% static 'assets/images/icons/icon-pwd.svg' %}" alt="">Change Password</a></li>
+                    <li><a href="{% url 'accounts:logout' %}"><img src="{% static 'assets/images/icons/icon-42.svg' %}" alt="">Log Out</a></li>
+                    
+                    <!-- <li><a href="{% url 'accounts:logout' %}"><img src="{% static 'assets/images/icons/icon-38.svg' %}" alt="">Support Ticket</a></li> -->
+                    <!-- <li><a href="{% url 'payments:transfer' %}" class="{% if '/transfer' == request.path %}current{% endif %}"><img src="{% static 'assets/images/icons/icon-41.svg' %}" alt="">Transfer Balance</a></li> -->
+                    <!-- <li><a href="index.html"><img src="{% static 'assets/images/icons/icon-37.svg' %}" alt="">Level Report</a></li> -->
+                    <!-- <li><a href="index.html"><img src="{% static 'assets/images/icons/icon-38.svg' %}" alt="">Rank & Rewards</a></li> -->
+                    <!-- <li><a href="index.html"><img src="{% static 'assets/images/icons/icon-39.svg' %}" alt="">Bonus Reports</a></li> -->
+                    <!-- <li><a href="index.html"><img src="{% static 'assets/images/icons/icon-34.svg' %}" alt="">Buy Package History</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+        <!-- End Mobile Menu -->
+
+       
+        <!-- Dashboard Section -->
+        {% block content %} {% endblock %}
+        <!-- Dashboard Section End -->
+
+        <!-- <a href="https://api.whatsapp.com/send?phone=+33745655090&text=Hello%21%20CARAXASSET%20Support%20." class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+            </a> -->
+
+        <!-- Scroll Top -->
+        <button class="scroll-top scroll-to-target" data-target="html"><i class="icon-4"></i></button>
+
+    </div>
+
+
+    <!-- Jequery Plugins List -->
+    <script src="{% static 'assets/js/jquery.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.js' %}"></script>
+    <script src="{% static 'assets/js/owl.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'assets/js/appear.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/odometer.js' %}"></script>
+    <script src="{% static 'assets/js/parallax.min.js' %}"></script>
+    <script src="{% static 'assets/js/parallax-scroll.js' %}"></script>
+    <script src="{% static 'assets/js/data-table.js' %}"></script>
+    <script src="{% static 'assets/js/datatable.js' %}"></script>
+
+    <!-- Custom Js -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+<!-- Start of LiveChat (www.livechat.com) code -->
+<script>
+    window.__lc = window.__lc || {};
+    window.__lc.license = 18391236;
+    window.__lc.integration_name = "manual_onboarding";
+    window.__lc.product_name = "livechat";
+    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+<noscript><a href="https://www.livechat.com/chat-with/18391236/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+<!-- End of LiveChat code -->
+
+</body>
+<!-- Boxed Wrapper End -->
+
+</html>

@@ -1,0 +1,89 @@
+{% extends "crypto/base.html" %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+{% include 'crypto/alerts.html' %}
+        <!-- contact-section -->
+        <section class="contact-section">
+            <div class="pattern-layer">
+                <div class="pattern-1" style="background-image: url({% static 'assets/images/shape/shape-44.png' %});"></div>
+                <div class="pattern-2" style="background-image: url({% static 'assets/images/shape/shape-20.png' %});"></div>
+                <div class="pattern-3" style="background-image: url({% static 'assets/images/shape/shape-36.png' %});"></div>
+            </div>
+            <div class="auto-container">
+                <div class="section-title text-center">
+                    <span class="sub-title">Contact Us</span>
+                    <h2>Let’s Get Connect With Us</h2>
+                </div>
+                <div class="image-box"><img src="{% static 'assets/images/resource/contact-1.jpg' %}" alt=""></div>
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="info-content">
+                            <div class="single-info-box">
+                                <div class="icon-box"><i class="icon-22"></i></div>
+                                <p><a>Phone Number</a><br>
+                                    <a>+447709886433</a></p>
+                            </div>
+                            <div class="single-info-box">
+                                <div class="icon-box"><i class="icon-23"></i></div>
+                                <p>Office Address<br>3015 Suit pagla road, UK</p>
+                            </div>
+                            <div class="single-info-box">
+                                <div class="icon-box"><i class="icon-24"></i></div>
+                                <p><a>Email Address</a><br><a
+                                        href="support@nextafinance.com">support@nextafinance.com</a></p>
+                            </div>
+                            <!-- <div class="single-info-box">
+                                <div class="icon-box"><i class="icon-25"></i></div>
+                                <p>Starbucks <br>Louis Vuitton</p>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-12 col-sm-12">
+                        <div class="content-box">
+                            <div class="map-box">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15955.903220649105!2d103.851959!3d1.290270!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1601263396347!5m2!1sen!2s"
+                                    allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="contact-form">
+                                <h2>Send Us Message</h2>
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    <input name="bot-c" type="hidden" />
+                                    <div class="row clearfix">
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Full Name</label>
+                                                <input type="text" name="name" placeholder="Enter Full Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <input type="email" name="email" placeholder="Email Address">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Comments</label>
+                                                <textarea name="message" placeholder="Write Your  Message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <button type="submit" class="theme-btn">Submit Now</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- contact-section end -->
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "crypto/base.html" %}
+{% load static %}
+{% block title %}Verify OTP{% endblock %}
+
+{% block content %}
+
+
+        <!-- Form Section -->
+        <section class="form-section text-center">
+            <div class="pattern-layer">
+                <div class="pattern-1" style="background-image: url({% static 'assets/images/shape/shape-57.png);"></div>
+                <div class="pattern-2" style="background-image: url({% static 'assets/images/shape/shape-59.png);"></div>
+                <div class="pattern-3" style="background-image: url({% static 'assets/images/shape/shape-60.png);"></div>
+                <div class="pattern-4" style="background-image: url({% static 'assets/images/shape/shape-61.png);"></div>
+                <div class="pattern-5" style="background-image: url({% static 'assets/images/shape/shape-62.png);"></div>
+            </div>
+            <div class="auto-container">
+                <div class="section-title">
+                    <span class="sub-title">OTP Code Verification</span>
+                    <h2>Welcome To NextaFinance</h2>
+                </div>
+                {% include 'crypto/alerts.html' %}
+                <div class="form-box">
+                    <h4>Verify OTP</h4>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <!-- <input type="hidden" name="email" value="{{ request.POST.email }}"> -->
+                        <div class="form-group">
+                            <input type="text" name="email" placeholder="Enter Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="otp" placeholder="Enter OTP" required>
+                        </div>
+                        
+                        <div class="btn-box">
+                            <button type="submit" class="theme-btn">Verify OTP</button>
+                            
+                        </div>
+                    </form>
+                    <div class="text">Already have an account? <a href="{% url 'accounts:sign_in' %}">Log in</a></div>
+                </div>
+            </div>
+        </section>
+        <!-- Form Section End -->
+        
+
+{% endblock %}

@@ -1,0 +1,525 @@
+{% extends 'trade/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
+ @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+ .snip1533 {
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+   color: #9e9e9e;
+   display: inline-block;
+   font-family: 'Roboto', Arial, sans-serif;
+   font-size: 16px;
+   margin: 35px 10px 10px;
+   max-width: 310px;
+   min-width: 250px;
+   position: relative;
+   text-align: center;
+   width: 100%;
+   background-color: #ffffff;
+   border-radius: 5px;
+   border-top: 5px solid #000052;
+ }
+ 
+ .snip1533 *,
+ .snip1533 *:before {
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   -webkit-transition: all 0.1s ease-out;
+   transition: all 0.1s ease-out;
+ }
+ 
+ .snip1533 figcaption {
+   padding: 13% 10% 12%;
+ }
+ 
+ .snip1533 figcaption:before {
+   -webkit-transform: translateX(-50%);
+   transform: translateX(-50%);
+   background-color: #fff;
+   border-radius: 50%;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+   color: #000052;
+   content: "\f10e";
+   font-family: 'FontAwesome';
+   font-size: 32px;
+   font-style: normal;
+   left: 50%;
+   line-height: 60px;
+   position: absolute;
+   top: -30px;
+   width: 60px;
+ }
+ 
+ .snip1533 h3 {
+   color: #3c3c3c;
+   font-size: 20px;
+   font-weight: 300;
+   line-height: 24px;
+   margin: 10px 0 5px;
+ }
+ 
+ .snip1533 h4 {
+   font-weight: 400;
+   margin: 0;
+   opacity: 0.5;
+ }
+ 
+ .snip1533 blockquote {
+   font-style: italic;
+   font-weight: 300;
+   margin: 0 0 20px;
+ }
+ 
+ </style>
+ 
+
+<!-- Banner/Slider -->
+<div id="header" class="banner header-slider">
+    <div class="single-slide light row-vm has-bg"
+        style="background:url({% static 'trade/frontend_assets/images/couple-investors.jpg' %}); background-size: cover;">
+        <div class="container">
+            <div class="banner-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 class="animate-bottom delayms5">Invest and safeguard your assets with the services
+                            of a reputable <br /><span class="ucap">
+                                A DECENTRALISED TRUST COMPANY </span></h1>
+                        <p class="lead animate-bottom delayms7">Leverage your capital effectively by
+                            diversifying investments across cryptocurrency, commodities, and mutual funds.</p>
+                        <ul class="btns animate-bottom delayms9">
+                            <li><a href="{% if user.is_authenticated %}{% url 'accounts:dashboard' %}{% else %}{% url 'accounts:sign_up' %}{% endif %}" class="btn">Get Started</a></li>
+                            <li><a href="{% if user.is_authenticated %}{% url 'accounts:dashboard' %}{% else %}{% url 'accounts:sign_in' %}{% endif %}" class="btn btn-outline">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="single-slide light row-vm has-bg"
+        style="background-image:url({% static 'trade/frontend_assets/images/team-left.png' %}); background-size: cover;">
+        <div class="container">
+            <div class="banner-content">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <h1 class="animate-bottom delayms5">Cryptocurrency Exchange for Bitcoin Trading.
+                            <br /><span class="ucap">YOU CAN TRUST</span>
+                        </h1>
+                        <p class="lead animate-bottom delayms7">We offer our clients peace of mind and
+                            unwavering confidence in navigating the complexities of an ever-evolving world.</p>
+                        <ul class="btns animate-bottom delayms9">
+                            <li><a href="{% if user.is_authenticated %}{% url 'accounts:dashboard' %}{% else %}{% url 'accounts:sign_up' %}{% endif %}" class="btn">Get Started</a></li>
+                            <li><a href="{% if user.is_authenticated %}{% url 'accounts:dashboard' %}{% else %}{% url 'accounts:sign_in' %}{% endif %}" class="btn btn-outline">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Banner/Slider -->
+<div class="text-center mt-5 mb-5" style="font-weight: bolder; margin: 5px 0px;"><h4>TRUSTED BY EXECUTIVES FROM <br>
+    THESE COMPANIES AND MANY MORE</h4></div>
+<!-- BTC Ticker -->
+<div class="btc-ticker">
+    <div class="ticker-item">
+        <!-- <div class="btcwdgt-price" bw-cur="usd"></div> -->
+        <img src="{% static 'wave.jfif' %}" width="20"  alt="">
+    </div>
+    <div class="ticker-item">
+        <!-- <div class="btcwdgt-price" bw-cur="eur"></div> -->
+        <img src="{% static 'fiac.webp' %}" width="20" alt="">
+    </div>
+    <div class="ticker-item">
+        <!-- <div class="btcwdgt-price" bw-cur="jpy"></div> -->
+        <img src="{% static 'micro.jfif' %}" width="20" height="30" alt="">
+    </div>
+    <div class="ticker-item">
+        <!-- <div class="btcwdgt-price" bw-cur="gbp"></div> -->
+        <img src="{% static 'fitness.webp' %}" width="20" alt="">
+    </div>
+    <div class="ticker-item">
+        <!-- <div class="btcwdgt-price" bw-cur="usd"></div> -->
+        <img src="{% static 'wave.jfif' %}" width="20"  alt="">
+    </div>
+    <div class="ticker-item">
+        <!-- <div class="btcwdgt-price" bw-cur="eur"></div> -->
+        <img src="{% static 'fiac.webp' %}" width="20" alt="">
+    </div>
+    <div class="ticker-item">
+        <!-- <div class="btcwdgt-price" bw-cur="jpy"></div> -->
+        <img src="{% static 'micro.jfif' %}" width="20" height="30" alt="">
+    </div>
+    <div class="ticker-item">
+        <!-- <div class="btcwdgt-price" bw-cur="gbp"></div> -->
+        <img src="{% static 'fitness.webp' %}" width="20" alt="">
+    </div>
+    
+</div>
+<!-- End BTC Ticker -->
+
+
+<!-- Features Box -->
+<div class="features-box section section-pad">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 col-sm-6 res-m-bttm">
+                <div class="box box-alt-bg round shadow">
+                    <img src="{% static 'trade/frontend_assets/images/box-icon-a.png' %}" alt="box-icon" class="box-icon">
+                    <h6 class="ucap">Licensed Investments</h6>
+                    <p class="small">We possess all the required licenses to conduct trading operations with our
+                        clients' funds.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 res-m-bttm">
+                <div class="box box-alt-bg round shadow">
+                    <img src="{% static 'trade/frontend_assets/images/box-icon-b.png' %}" alt="box-icon" class="box-icon">
+                    <h6 class="ucap">NO HIDDEN FEES</h6>
+                    <p class="small">We maintain complete transparency regarding fees, profits, and charges for our
+                        services.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 res-m-bttm">
+                <div class="box box-alt-bg round shadow">
+                    <img src="{% static 'trade/frontend_assets/images/box-icon-c.png' %}" alt="box-icon" class="box-icon">
+                    <h6 class="ucap">INSTANT TRADING</h6>
+                    <p class="small">Experience hassle-free and instant trading initiation without delays.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="box box-alt-bg round shadow">
+                    <img src="{% static 'trade/frontend_assets/images/box-icon-d.png' %}" alt="box-icon" class="box-icon">
+                    <h6 class="ucap">SECURED & trusted</h6>
+                    <p class="small">Security and customer satisfaction are our top priorities and guiding
+                        principles.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--Section -->
+<div class="section section-pad bg-grey">
+    <div class="container">
+        <div class="row row-vm">
+            <div class="col-md-5">
+                <div class="video-block round">
+                    <!-- <img src="{% static 'trade/frontend_assets/images/team-lefts.jpg' %}" alt="photo-md" class="img-shadow">
+                    <a href="#video_here" class="video-play"><span class="pe pe-7s-play"></span></a>
+                       -->
+                       
+                    <div id="video-01" class="video-popup">
+                        <video preload="false" width="80%" height="240" controls poster="{% static 'trade/frontend_assets/images/team-lefts.jpg' %}">
+                            <source src="https://res.cloudinary.com/https-flenzy-herokuapp-com/video/upload/v1725578483/lv_0_20240906000753_zlbql7.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6 col-md-offset-1 ">
+                <div class="text-block">
+                    <h2>Introduction?</h2>
+                    <p>Allow me to express my appreciation for the opportunity tointroduce my investment services to you, 
+                        and I look forwardto being of assistance in helping you meet your financialgoals.</p>
+                    <p>This investment program is founded on the idea thatdiversification and asset allocation are the keys to toinvestment success. All too often investors pursue strategiesthat while steeped in good intentions, 
+                            lack the discipline andplanning considered vital by many investment professionalsto reaching their financial goals. 
+                            <br>At the forefront of this investment method is my personalapproach in constructing an investment portfolio suited toyour needs and a portfolio tracking system developed by aninvestment professional with over a decade of multifacetedinvestment experience. 
+                            Unlike most investment services that only check your assetallocation targets once every quarter, I monitor everyinvestors' account at least once a day. 
+                            The increased volatility of today's markets requires constantmonitoring of an investors' 
+                            portfolio in order to control riskand increase the likelihood of reaching your financial goals.</p>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Section -->
+
+
+<!--Section -->
+<div class="section section-pad has-bg light dark-filter">
+    <div class="imagebg has-parallax">
+        <img src="{% static 'trade/frontend_assets/images/bitcoin-paper.jpg' %}" alt="calc-bg">
+    </div>
+    <div class="container">
+        <div class="row row-vm">
+            <div class="col-md-5">
+                <div class="text-block">
+                    <h2>Currency Calculator</h2>
+                    <p>Our payment options are Bitcoin & USDT, so can calculate the rates here on our Avartechfx
+                        calculator. USDT is a stable coin that has the same value as the US Dollar ($)</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-1">
+                <div class="bitcoin-calculator">
+                    <script>
+                        baseUrl = "https://widgets.cryptocompare.com/";
+                        var scripts = document.getElementsByTagName("script");
+                        var embedder = scripts[scripts.length - 1];
+                        (function () {
+                            var appName = encodeURIComponent(window.location.hostname);
+                            if (appName == "") { appName = "local"; }
+                            var s = document.createElement("script");
+                            s.type = "text/javascript";
+                            s.async = true;
+                            var theUrl = baseUrl + 'serve/v1/coin/converter?fsym=BTC&tsyms=USD,EUR,CNY,GBP';
+                            s.src = theUrl + (theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+                            embedder.parentNode.appendChild(s);
+                        })();
+                    </script>
+                </div>
+                <a href="https://www.blockchain.com/" class="btn">Buy now</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Section -->
+
+<!--Section -->
+<div class="section section-pad">
+    <div class="container">
+        <div class="section-head">
+            <div class="row text-center">
+                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <h2 class="heading-section">We keep your assets safe</h2>
+                    <p>Your security and trust are paramount to us. We are unwavering in our commitment to
+                        safeguarding your account with the utmost levels of security standards.</p>
+                </div>
+            </div>
+        </div>
+        <div class="gaps size-3x"></div>
+        <div class="row text-center row-vm">
+            <div class="col-md-4 res-m-bttm-lg">
+                <div class="box-alt">
+                    <span class="pe pe-7s-server"></span>
+                    <h4>Payment Options</h4>
+                    <p>While we engage in trading various stocks, our primary payment options are Bitcoin and USDT
+                        (Tether).</p>
+                </div>
+                <div class="box-alt">
+                    <span class="pe pe-7s-note"></span>
+                    <h4>Legal Compliance</h4>
+                    <p>We proudly possess all the documented licenses and certifications issued by World Standards,
+                        ensuring our commitment to industry excellence and compliance.</p>
+                </div>
+                <div class="box-alt">
+                    <span class="pe pe-7s-airplay"></span>
+                    <h4>Covenient Trading</h4>
+                    <p>We provide custodianship services to both new and existing clients, with a user-friendly
+                        process designed for ease of use.</p>
+                </div>
+            </div>
+            <div class="col-md-4 res-m-bttm-lg">
+                <div class="box-alt">
+                    <span class="pe pe-7s-lock"></span>
+                    <h4>Strong Security</h4>
+                    <p>For years now, Avartechfx has securely stored a fortune at our two
+                        escrow vaults.</p>
+                </div>
+
+                <div class="box-alt">
+                    <span class="pe pe-7s-cash"></span>
+                    <h4>Competitive Commissions</h4>
+                    <p>Recieve the best but fair commissions from time to time.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box-alt">
+                    <span class="pe pe-7s-global"></span>
+                    <h4>World Coverage</h4>
+                    <p>Our reach is all over the world, and we have happy customers from over 40+ countries.</p>
+                </div>
+                <div class="box-alt">
+                    <span class="pe pe-7s-graph"></span>
+                    <h4>Advanced Reporting</h4>
+                    <p>Recieve live statistics and information about trading returns on our sleek user interface.
+                    </p>
+                </div>
+                <div class="box-alt">
+                    <span class="pe pe-7s-graph1"></span>
+                    <h4>Margin Trading</h4>
+                    <p>It's our job to sweat the small stuff, we make sure your asset is
+                        safeguarded from any fraud while you work.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Section -->
+<div class="section section-pad bg-grey">
+    <div class="container">
+        <div class="section-head">
+            <div class="row text-center">
+                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <h2 class="heading-section">How To Get Started</h2>
+                    <p>We are dedicated to delivering cutting-edge services in cryptocurrency mining and trading.
+                        Our team of professional analysts and experts in the cryptocurrency space work diligently to
+                        provide you with stable, reliable, and exceptionally long-term cooperation. The outcome of
+                        this collaboration is poised to lead to rapid growth for us and assured profits for you.</p>
+                </div>
+            </div>
+        </div>
+        <div class="gaps size-3x"></div>
+        <div class="tab-custom tab-custom-two">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
+                    <ul class="nav nav-tabs">
+                        <li class="active" data-toggle="tab" data-target="#tab1">
+                            <div class="steps">
+                                <span class="step-number">1</span>
+                                <h4>Sign Up</h4>
+                                <p>Initiating your investment journey is straightforward; simply create an account
+                                    with us. The sign-up process is quick and can be completed in just a few
+                                    minutes.</p>
+                                <div class="gaps size-1x"></div>
+                            </div>
+                        </li>
+                        <li data-toggle="tab" data-target="#tab2">
+                            <div class="steps">
+                                <span class="step-number">2</span>
+                                <h4>Choose investment plan</h4>
+                                <p>Make a choice from the three plans available.</p>
+                                <div class="gaps size-1x"></div>
+                            </div>
+                        </li>
+                        <li data-toggle="tab" data-target="#tab3">
+                            <div class="steps">
+                                <span class="step-number">3</span>
+                                <h4>invest</h4>
+                                <p>Select and invest in an investment plan with seamless ease, initiating your
+                                    journey towards profitability. We encourage you to thoroughly review the profit
+                                    options to determine which plan aligns best with your objectives.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-5 col-sm-12 col-md-offset-1 text-center">
+                    <!-- Tab panes -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Section -->
+<div class="section section-pad bg-grey">
+    <div class="container">
+        <div class="row row-vm">
+            <div class="col-md-5">
+                <div class="video-block round">
+                    <img src="{% static 'trade/frontend_assets/images/post-5.jpg' %}" alt="photo-md" class="img-shadow">
+                    <a href="#video_here" class="video-play"><span class="pe pe-7s-play"></span></a>
+                </div>
+
+            </div>
+            <div class="col-md-6 col-md-offset-1 ">
+                <div class="text-block">
+                    <h2>We Made Everything Seamless For You</h2>
+                    <p>Avoninvestments helps investors diversify their portfolios by including cryptocurrencies as a
+                        significant asset class. This diversification strategy not only spreads risk but also offers
+                        the potential for high returns in a rapidly evolving digital economy.</p>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Section -->
+<div class="section section-pad bg-grey">
+    <div class="container">
+        <div class="row row-vm">
+            <div class="col-md-5">
+                <!--<div class="round mgr--30 res-m-bttm"><img src="https://avartechfx.com/frontend_assets/images/team-lefts.jpeg" alt="photo-md" class="img-shadow"></div>-->
+                <div class="video-block round">
+                    <img src="{% static 'trade/frontend_assets/images/ref.jpg' %}" alt="photo-md" class="img-shadow">
+
+                </div>
+
+            </div>
+            <div class="col-md-6 col-md-offset-1 ">
+                <div class="text-block">
+                    <h2>Affiliate Marketing?</h2>
+                    <p>Earn commissions through affiliate marketing and forming successful partnership. By sharing
+                        our platform with others and you can earn profits as you build teams and collect a
+                        percentage of all fees!</p>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Section -->
+
+
+
+<center>
+    <h4 style="margin-top: 40px;" >Testimonial</h4>
+    <p>What our clients have to say</p>
+ <figure class="snip1533">
+    <figcaption>
+      <blockquote>
+        <p>I will say I've loved the servicesrendered by Trade With KennellyFreelance Investment Services. 
+        I wastreated like one of their biggestcustomers even though I just kickedoff with the minimum $6000.</p>
+      </blockquote>
+      <h3>WAYNE GRANT</h3>
+      <h4>(INVESTOR)</h4>
+    </figcaption>
+  </figure>
+  <figure class="snip1533">
+    <figcaption>
+      <blockquote>
+        <p>I absolutely love Trade With KennellyInvestment Services. When my wifepassed, they set up an investmentaccount for 
+        my life insurance benefits,handled the rollover of an oldVanguard 401(k) as well as my wife's401(k) into an inherited IRA account. Ihighly recommend TWK.</p>
+      </blockquote>
+      <h3>HOWARD FRITZ</h3>
+      <h4>(INVESTOR)</h4>
+    </figcaption>
+  </figure>
+  <figure class="snip1533">
+    <figcaption>
+      <blockquote>
+        <p>The financial advice and planningsections were the biggest perk of TradeWith Kennelly Freelance InvestmentServices. Just like most of us, I amjuggling a 
+        few goals including savingfor retirement, and I'm glad TWKFreelance Investment Services can helpkeep me on schedule.</p>
+      </blockquote>
+      <h3>UCIA CLARKE</h3>
+      <h4>(INVESTOR)</h4>
+    </figcaption>
+  </figure>
+ </center>
+
+ 
+<!-- Section -->
+<div class="section section-pad-sm cta-small light">
+    <div class="cta-block">
+        <div class="container">
+            <div class="row mobile-center">
+                <div class="col-md-12">
+                    <div class="cta-sameline">
+                        <h3>Open account for free and start investing!</h3>
+                        <a class="btn btn-outline btn-alt btn-md" href="{% if user.is_authenticated %}{% url 'accounts:dashboard' %}{% else %}{% url 'accounts:sign_in' %}{% endif %}">get started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    
+ $(".hover").mouseleave(
+   function() {
+     $(this).removeClass("hover");
+   }
+ );
+  </script>
+
+
+{% endblock %}

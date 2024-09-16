@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+{% load static %}
+<head>
+    <!-- BEGIN META TAGS -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description" content="TradewithKennellysi is a private financial company engaged in investment activities, which are related to trading on financial markets and cryptocurrency exchanges performed by qualified professional traders." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://tradewithKennellysi.net" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TradewithKennellysi" />
+    <meta property="og:description" content="TradewithKennellysi is a private financial company engaged in investment activities, which are related to trading on financial markets and cryptocurrency exchanges performed by qualified professional traders." />
+    <meta property="og:url" content="https://tradewithKennellysi.net" />
+    <meta property="og:site_name" content="TradewithKennellysi" />
+    <meta property="og:image" content="https://www.flashscore.com.ng/res/_fs/image/og/flashscore.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="author" content="TradewithKennellysi">
+    <!-- BEGIN THEME COLOR META TAGS -->
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-navbutton-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- END THEME COLOR META TAGS -->
+    <!-- END META TAGS -->
+    <!-- BEGIN FAVICON TAGS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tradewithKennellysi.net/logo/657013c59d18f-1701843909.png"
+        color="#000000">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://tradewithKennellysi.net/logo/657013c59d18f-1701843909.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://tradewithKennellysi.net/logo/657013c59d18f-1701843909.png">
+    <link rel="manifest" href="https://tradewithKennellysi.net/logo/657013c59d18f-1701843909.png">
+    <link rel="mask-icon" href="https://tradewithKennellysi.net/logo/657013c59d18f-1701843909.png"
+        color="#000000">
+    <link rel="shortcut icon" href="https://tradewithKennellysi.net/logo/657013c59d18f-1701843909.png">
+    <meta name="msapplication-TileImage" content="https://tradewithKennellysi.net/logo/657013c59d18f-1701843909.png" />
+    <!-- END FAVICON TAGS -->
+
+    <!-- BEGIN TITLE TAG -->
+    <title>{% block title %}TradewithKennellysi{% endblock %}</title>
+    <!-- END TITLE TAG -->
+    <!-- Vendor Bundle CSS -->
+    <link rel="stylesheet" href="{% static 'trade/frontend_assets/assets/css/vendor.bundle.css' %}">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'trade/frontend_assets/assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'trade/frontend_assets/assets/css/theme.css' %}" rel="stylesheet">
+    
+    <style>
+        .google_translate_element {
+            margin-right: 10px !important;
+            float: right !important;
+            position: fixed;
+            z-index: 1000;
+            bottom: 40px;
+            left: 0;
+            margin-left: 7px;
+        }
+
+        .calc {
+            display: flex;
+            justify-content: space-around;
+            -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            position: relative;
+            z-index: 100;
+        }
+
+        .calc .left {
+            font-family: "Cairo", sans-serif;
+            font-size: 24px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: auto 0;
+        }
+
+        .calc .calculator {
+            display: flex;
+            justify-content: space-around;
+            width: 75%;
+        }
+
+        .calc .calculator .content .title {
+            font-family: "Roboto Condensed", sans-serif;
+            font-size: 14px;
+            color: #f7f7f7;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .calc .calculator .content input,
+        .calc .calculator .content select {
+            background-color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            color: #161515;
+        }
+        
+        .mgm {
+          border-radius: 7px;
+          position: fixed;
+          z-index: 90;
+          bottom: 80px;
+          right: 50px;
+          background: #fff;
+          padding: 20px 27px;
+          box-shadow: 0px 5px 13px 0px rgb(242, 240, 240)0.3);
+        }
+        .mgm a {
+          font-weight: 700;
+          display: block;
+          color:#000052;
+        }
+        .mgm a, .mgm a:active {
+          transition: all .2s ease;
+          color:#000052;
+        }
+    </style>
+  
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header header-s1 is-sticky">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <ul class="social">
+
+                            <li><a href="#"><em class="fa fa-youtube"></em></a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 al-right">
+                        <ul class="top-nav">
+                            <li><a href="{% url 'faq' %}">Help</a></li>
+                            <li><a href="{% url 'contact' %}">Support</a></li>
+                            {% if user.is_authenticated %}
+                            {% else %}
+                            <li><a href="{% url 'accounts:sign_in' %}">Login</a></li>
+                            <li><a href="{% url 'accounts:sign_up' %}">Register</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="google_translate_element" id="google_translate_element"></div>
+        <!-- End Topbar -->
+        <!-- Navbar -->
+        <div class="navbar navbar-primary">
+            <div class="container relative">
+                <!-- Logo -->
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <!-- <img class="logo logo-dark" alt="logo"
+                        src="https://tradewithKennellysi.net/logo/657012987493d-1701843608.png">
+                    <img class="logo logo-light" alt="logo"
+                        src="https://tradewithKennellysi.net/logo/657013015db12-1701843713.png"> -->
+                        <h4>Tradewithkennellysi</h4>
+                </a>
+                <!-- #end Logo -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainnav"
+                        aria-expanded="false">
+                        <span class="sr-only">Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- <div class="quote-btn"><a class="btn" href="{% url 'accounts:dasboard'}"><span>get started</span></a></div> -->
+                </div>
+                <!-- MainNav -->
+                <nav class="navbar-collapse collapse" id="mainnav">
+                    <ul class="nav navbar-nav">
+                        <li class=""><a href="{% url 'home' %}">Home </a></li>
+                        <li class=""><a href="{% url 'about' %}">About </a></li>
+                        <!-- <li class=""><a href="team.php">Team</a></li> -->
+                        <li class=""><a href="{% url 'faq' %}">FAQs</a></li>
+                        <li class=""><a href="{% url 'plans' %}">Investment Plans</a></li>
+                        <li class=""><a href="{% url 'market_data' %}">Market Data</a></li>
+                        <li class=""><a href="{% url 'contact' %}">Contact</a></li>
+                        <!-- {% if user.is_authenticated %}
+                        <li class="quote-btn hidden-xs hidden-sm"><a class="btn" href="{% url 'accounts:dasboard'}">dashboard</a></li>
+                        {% else %}
+                        <li class="quote-btn hidden-xs hidden-sm"><a class="btn" href="{% url 'accounts:sign_up'}">get started</a></li>
+                        {% endif %} -->
+                    </ul>
+                </nav>
+                <!-- #end MainNav -->
+            </div>
+        </div>
+        <!-- End Navbar -->
+</header>
+<!-- End Header -->
+
+
+{% block content %}{% endblock %}
+
+
+<!-- End Copyright -->
+<div class="mgm" style="display: none;">
+	<div class="txt" style="color:#000;">Someone from <b></b> just earned
+    	<a href="javascript:void(0);" onclick="javascript:void(0);"></a>
+	</div>
+</div>
+<script type="text/javascript">
+  var listNames = ['Michael', 'Christopher', 'Jessica', 'Matthew', 'Ashley', 'Jennifer', 'Joshua', 'Amanda', 'Daniel', 'David', 'James', 'Robert', 'John', 'Joseph', 'Andrew', 'Ryan', 'Brandon', 'Jason', 'Justin', 'Sarah', 'William', 'Jonathan', 'Stephanie', 'Brian', 'Nicole', 'Nicholas', 'Anthony', 'Heather', 'Eric', 'Elizabeth', 'Adam', 'Megan', 'Melissa', 'Kevin', 'Steven', 'Thomas', 'Timothy', 'Christina', 'Kyle', 'Rachel', 'Laura', 'Lauren', 'Amber', 'Brittany', 'Danielle', 'Richard', 'Kimberly', 'Jeffrey', 'Amy', 'Crystal', 'Michelle', 'Tiffany', 'Jeremy', 'Benjamin', 'Mark', 'Emily', 'Aaron', 'Charles', 'Rebecca', 'Jacob', 'Stephen', 'Patrick', 'Sean', 'Erin', 'Zachary', 'Jamie', 'Kelly', 'Samantha', 'Nathan', 'Sara', 'Dustin', 'Paul', 'Angela', 'Tyler', 'Scott', 'Katherine', 'Andrea', 'Gregory', 'Erica', 'Mary', 'Travis', 'Lisa', 'Kenneth', 'Bryan', 'Lindsey', 'Kristen', 'Jose', 'Alexander', 'Jesse', 'Katie', 'Lindsay', 'Shannon', 'Vanessa', 'Courtney', 'Christine', 'Alicia', 'Cody', 'Allison', 'Bradley', 'Samuel', 'Shawn', 'April', 'Derek', 'Kathryn', 'Kristin', 'Chad', 'Jenna', 'Tara', 'Maria', 'Krystal', 'Jared', 'Anna', 'Edward', 'Julie', 'Peter', 'Holly', 'Marcus', 'Kristina', 'Natalie', 'Jordan', 'Victoria', 'Jacqueline', 'Corey', 'Keith', 'Monica', 'Juan', 'Donald', 'Cassandra', 'Meghan', 'Joel', 'Shane', 'Phillip', 'Patricia', 'Brett', 'Ronald', 'Catherine', 'George', 'Antonio', 'Cynthia', 'Stacy', 'Kathleen', 'Raymond', 'Carlos', 'Brandi', 'Douglas', 'Nathaniel', 'Ian', 'Craig', 'Brandy', 'Alex', 'Valerie', 'Veronica', 'Cory', 'Whitney', 'Gary'];
+  var listCountries = ['Argentina', 'USA', 'Germany', 'France', 'Italy', 'South Korea', 'Australia', 'Norway', 'Canada', 'Argentina', 'Saudi Arabia', 'Mexico', 'Spain', 'Austria', 'Venezuela', 'South Africa', 'Sweden', 'South Korea', 'China', 'Italy', 'Germany', 'United Kingdom', 'Bahrain', 'Greece', 'Cuba', 'Bulgaria', 'Portugal', 'Austria', 'Cyprus', 'Panama', 'Asia', 'Norway', 'Netherlands', 'Switzerland', 'Belgium', 'Israel', 'Cyprus','Spain','Norway'];
+  var listPlans = ['$10,000', '$10,500', '$11,000', '$11,500', '$12,000', '$12,500', '$13,000', '$13,500', '$14,000', '$14,500', '$15,000', '$15,500', '$16,000', '$16,500', '$17,000', '$17,500', '$18,000', '$18,500', '$19,000', '$19,500', '$20,000', '$21,000', '21,050', '30,000'];
+  var listTypes = ['earned', 'invested'];
+  interval = 8000;
+  var run = setInterval(request, interval);
+
+  function request() {
+    clearInterval(run);
+    interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+    var name = listNames[Math.floor(Math.random() * listNames.length)];
+    var country = listCountries[Math.floor(Math.random() * listCountries.length)];
+    var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
+    var type = listTypes[Math.floor(Math.random() * listTypes.length)];
+    var msg = '' + name + ' from <b>' + country + '</b> just ' + type + ' <a href="javascript:void(0);" onclick="javascript:void(0);">' + plan + ' </a>';
+    $(".mgm .txt").html(msg);
+    $(".mgm").stop(true).fadeIn(300);
+    window.setTimeout(function() {
+      $(".mgm").stop(true).fadeOut(300);
+    }, 6000);
+    run = setInterval(request, interval);
+  }
+</script>
+<!-- Section Footer -->
+<div class="footer-section section section-pad-md light bg-footer">
+   <div class="imagebg footerbg">
+      <img src="{% static 'trade/frontend_assets/images/footer-bg.png' %}" alt="footer-bg">
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4 col-sm-12 wgs-box res-m-bttm-lg">
+            <!-- Each Widget -->
+            <div class="wgs-footer wgs-menu">
+               <h5 class="wgs-title ucap">Services</h5>
+               <div class="wgs-content">
+                  <ul class="menu">
+                     <li><a href="https://www.blockchain.com/">Buy Bitcoins</a></li>
+                     <li><a href="https://www.bybit.com/en-us/learn/crypto/buy-tether/">Buy USDT</a></li>
+                     <li><a href="https://www.blockchain.com/">Sell Bitcoins</a></li>
+                     {% if user.is_authenticated %}
+                     <li><a href="{% url 'accounts:dashboard' %}">Dashboard</a></li>
+                     {% else %}
+                     <li><a href="{% url 'accounts:sign_up' %}">Sign Up</a></li>
+                     <li><a href="{% url 'accounts:sign_in' %}">Login</a></li>
+                     {% endif %}
+                     <!-- <li><a href="ukcert.pdf">UK Certificate</a></li> -->
+                  </ul>
+               </div>
+            </div>
+            <!-- End Widget -->
+         </div>
+         <div class="col-md-4 col-sm-12 wgs-box res-m-bttm-lg">
+            <!-- Each Widget -->
+            <div class="wgs-footer wgs-menu">
+               <h5 class="wgs-title ucap">Information</h5>
+               <div class="wgs-content">
+                  <ul class="menu">
+                     <li><a href="{% url 'about' %}">About Us</a></li>
+                     <li><a href="{% url 'plans' %}">Investment Plans</a></li>
+                     <li><a href="{% url 'faq' %}">FAQ</a></li>
+                     <li><a href="{% url 'terms' %}">Terms & Conditions</a></li>
+                     <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+                     <li><a href="{% url 'glossary' %}">Investments Glossary</a></li>
+                  </ul>
+               </div>
+            </div>
+            <!-- End Widget -->
+         </div>
+         <div class="col-md-4 col-sm-12 wgs-box res-m-bttm">
+            <!-- Each Widget -->
+            <div class="wgs-footer wgs-contact">
+               <h5 class="wgs-title ucap">get in touch</h5>
+               <div class="wgs-content">
+                  <ul class="wgs-contact-list">
+                     <li><span class="pe pe-7s-map-marker"></span>1 Beauchamp Court, 10 Victors Way, Barnet, Hertfordshire, EN5 5TZ</li>
+                     <li><a href="#"><span class="pe pe-7s-call"></span>Telephone/Whatsapp: +1(786)632-3745</a>
+                     </li>
+                     <li><span class="pe pe-7s-global"></span>Email : <a href="/cdn-cgi/l/email-protection#7a290f0a0a15080e3a1b0c151413140c1f090e171f140e0954141f0e"><span class="__cf_email__" data-cfemail="51022421213e23251130273e3f383f273422253c343f25227f3f3425">[email&#160;protected]</span></a> 
+                     <br />Web : <a href="https://tradewithKennellysi.net">https://tradewithKennellysi.com</a></li>
+                  </ul>
+               </div>
+            </div>
+            <!-- End Widget -->
+         </div>
+      </div>
+   </div>
+</div>
+<!-- End Section -->
+<!-- Copyright -->
+<div class="copyright light">
+   <div class="container">
+      <div class="row">
+         <div class="site-copy col-sm-7">
+            <p>Copyright &copy; <span class="year"></span>. All rights reserved <a href="#">tradewithKennellysi</a></p>
+         </div>
+         <!-- <div class="col-sm-5 text-right mobile-left">
+            <ul class="social">
+               <li><a href="https://twitter.com/"><em class="fa fa-twitter"></em></a></li>
+               <li><a href="https://t.me/"><em class="fa fa-telegram"></em></a></li>
+               <li><a href="https://www.instagram.com/"><em class="fa fa-instagram"></em></a></li>
+            </ul>
+         </div> -->
+      </div>
+   </div>
+</div>
+<!-- End Copyright -->
+<div
+   style="position:fixed; bottom:0; left:0; right:0; z-index:100; width: 100%; height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:35px; font-size: 12px; box-sizing:content-box; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;padding:1px;padding: 0px; margin: 0px;">
+   <div style="height:40px;"><iframe
+      src="https://widget.coinlib.io/widget?type=horizontal_v2&amp;theme=light&amp;pref_coin_id=1505&amp;invert_hover="
+      width="100%" height="36" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
+      style="border:0;margin:0;padding:0;"></iframe></div>
+   <div
+      style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing:content-box; margin: 5px 6px 10px 0px; font-family: Verdana, Tahoma, Arial, sans-serif;">
+      powered by&nbsp;<a href="https://coinlib.io/" target="_blank"
+         style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size: 11px;">Coinlib Crypto
+      Currencies</a>
+   </div>
+</div>
+<!-- Preloader !remove please if you do not want --
+   <div id="preloader"><div id="status">&nbsp;</div></div>
+    Preloader End -->
+<!-- JavaScript
+   ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<script>
+	const date = new Date();
+ document.querySelector('.year').innerHTML = date.getFullYear();
+ </script>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="{% static 'trade/frontend_assets/assets/js/jquery.bundle.js' %}"></script>
+<script src="{% static 'trade/frontend_assets/assets/js/script.js' %}"></script>
+<script>
+   (function (b, i, t, C, O, I, N) {
+       window.addEventListener('load', function () {
+           if (b.getElementById(C)) return;
+           I = b.createElement(i), N = b.getElementsByTagName(i)[0];
+           I.src = t; I.id = C; N.parentNode.insertBefore(I, N);
+       }, false)
+   })(document, 'script', 'https://widgets.bitcoin.com/widget.js', 'btcwdgt');
+</script>
+<script>
+   function googleTranslateElementInit() {
+   
+       new google.translate.TranslateElement({
+   
+           pageLanguage: 'en'
+   
+       }, 'google_translate_element');
+   
+   }
+</script>
+<script src="https://translate.google.com/translate_a/elementa0d8.js?cb=googleTranslateElementInit"></script>
+<script>
+   $(document).ready(function () {
+       setTimeout(function () {
+           //$(".put_in").addClass('in');
+           // $("#ASTPLAN").show();
+           $('#vacancy').modal('toggle');
+       }, 6000);
+   });
+   
+</script>
+<input type="hidden" id="calc_url" value="https://avartechfx.com/calc_url">
+<script type="text/javascript" src="{% static 'trade/frontend_assets/assets/js/calcs66.js' %}"></script>
+</body>
+</html>

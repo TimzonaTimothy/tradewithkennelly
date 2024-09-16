@@ -1,0 +1,102 @@
+{% extends 'trade/base.html' %}
+{% block title %}Contact{% endblock %}
+{% load static %}
+{% block content %}
+<!-- Banner/Slider -->
+<div class="page-head section row-vm light has-bg">
+    <div class="imagebg">
+        <img src="{% static 'trade/frontend_assets/images/team-lefts.jpg' %}" alt="page-head">
+    </div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h2>Contact</h2>
+                <div class="page-breadcrumb">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a></li>
+                        <li class="active"><span>Contact</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #end Banner/Slider -->
+
+
+<!-- Section -->
+<div class="section section-pad">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 res-m-bttm">
+                <div class="contact-information">
+                    <h4>Contact Information</h4>
+                    <div class="row">
+                        <div class="col-sm-4 res-m-bttm">
+                            <div class="contact-entry">
+                                <h6>Trade With Kennelly</h6>
+                                <p>1 Beauchamp Court, 10 Victors Way, Barnet, Hertfordshire, EN5 5TZ</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 res-m-bttm">
+                            <div class="contact-entry">
+                                <h6>contact number</h6>
+                                <p>Phone: +447520698346</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 res-m-bttm">
+                            <div class="contact-entry">
+                                <h6>office hours</h6>
+                                <p>Monday - Friday<br />8:30am - 5:00pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% include 'trade/alerts.html' %}
+                <div class="contact-form">
+                    <p>Complete and submit the form below</p>
+
+                    <form class="form-message" action="#" method="POST">
+                        {% csrf_token %}
+
+                        <div class="form-group row">
+                            <div class="form-field col-sm-6 form-m-bttm">
+                                <input name="name" type="text" placeholder="Full Name *" class="form-control required"
+                                    required>
+                            </div>
+                            <div class="form-field col-sm-6">
+                                <input name="email" type="email" placeholder="Email *"
+                                    class="form-control required email" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="form-field col-sm-6 form-m-bttm">
+                                <input name="phone" type="text" placeholder="Phone Number *"
+                                    class="form-control required" required>
+                            </div>
+                            <div class="form-field col-sm-6">
+                                <input name="subject" type="text" placeholder="Subject *" class="form-control required"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="form-field col-md-12">
+                                <textarea name="message" placeholder="Messages *" class="txtarea form-control required"
+                                    required></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-alt">Submit</button>
+                    </form>
+                </div>
+            </div><!-- .col  -->
+            <div class="col-md-4">
+                <div id="gMap" class="google-map"></div>
+                <a href="#" class="map-link">View on google map <span class="fa fa-caret-right"></span></a>
+            </div><!-- .col  -->
+        </div>
+    </div>
+</div>
+
+{% endblock %}

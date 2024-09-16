@@ -1,0 +1,139 @@
+{% extends "crypto/dashboard/base.html" %}
+{% load static %}
+
+
+{% block content %}
+{% include 'crypto/alerts.html' %}
+
+
+        <!-- Dashboard Section -->
+        <section class="dashboard-section">
+            <div class="outer-container">
+                <div class="dashboard-content">
+                    <div class="referral-content">
+                        <div class="title-box">
+                            <h6>Referral Link</h6>
+                            <p>You can also share your referral link by copying and sending it or sharing it on your
+                                social media</p>
+                        </div>
+                        <div class="reffer-box">
+                            <input type="text" name="reffer-code" id="ref-link"
+                                value="{{referral_link}}">
+                            <div class="btn-box">
+                                    <!-- <a href="#" class="share-btn">Share</a> -->
+                                    <button type="button" class="btn btn-primary" data-clipboard-target="#ref-link" onclick="copyToClipboard()">Copy</button>
+                            </div>
+                            <!-- <div class="btn-box">
+                                <a href="#" class="share-btn">Share</a>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Copy</button>
+                            </div> -->
+                        </div>
+                    </div>
+
+
+                    <div class="table-content">
+                        <div class="title-box">Referral History</div>
+                        <div class="dashboard-table">
+                            <table id="">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Username</th>
+                                        <th>Date</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if user_referrals %}
+                                    {% for user_referral in user_referrals %}
+                                            <tr>
+                                                <td class="invoice-id"><span>#{{ forloop.counter }}</span></td>
+                                               
+                                                <td>{{user_referral.referred.username}}</td>
+                                                <td>{{user_referral.created}}</td>
+                                            </tr>
+                                        
+                                        {% endfor %}
+                                    {% else %}
+                                        <p>You have not made any referral</p>
+                                    {% endif %}
+                                    
+                                </tbody>
+                            </table> <br>
+                            
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!-- Dashboard Section End -->
+
+        
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="#">
+                            <div class="form-group">
+                                <label>Amount</label>
+                                <input type="text" name="amount" placeholder="$00000">
+                            </div>
+                            <div class="form-group">
+                                <label>Select Plan</label>
+                                <div class="select-box">
+                                    <select class="wide">
+                                        <option data-display="Select Plan">Select Plan</option>
+                                        <option value="1">Plan One</option>
+                                        <option value="2">Plan Two</option>
+                                        <option value="3">Plan Three</option>
+                                        <option value="4">Plan Four</option>
+                                        <option value="5">Plan Five</option>
+                                        <option value="6">Plan Six</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="theme-btn">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function copyToClipboard() {
+                /* Get the text field */
+                var content = document.getElementById('ref-link');
+                
+                // Create a range object to select the text content
+                var range = document.createRange();
+                range.selectNode(content);
+                window.getSelection().removeAllRanges(); // Clear previous selections
+                window.getSelection().addRange(range);
+        
+                // Execute the copy command
+                document.execCommand('copy');
+        
+                // Clear the selection
+                window.getSelection().removeAllRanges();
+        
+                // Alert the user
+                alert("Copied!");
+            }
+        </script>
+        
+{% endblock %}

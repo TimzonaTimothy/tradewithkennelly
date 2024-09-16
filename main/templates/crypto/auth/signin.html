@@ -1,0 +1,52 @@
+{% extends "crypto/base.html" %}
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+        <!-- Form Section -->
+        <section class="form-section signin-form text-center">
+            <div class="pattern-layer">
+                <div class="pattern-1" style="background-image: url({% static 'assets/images/shape/shape-57.png' %});"></div>
+                <div class="pattern-2" style="background-image: url({% static 'assets/images/shape/shape-59.png' %});"></div>
+                <div class="pattern-3" style="background-image: url({% static 'assets/images/shape/shape-60.png' %});"></div>
+                <div class="pattern-4" style="background-image: url({% static 'assets/images/shape/shape-61.png' %});"></div>
+                <div class="pattern-5" style="background-image: url({% static 'assets/images/shape/shape-62.png' %});"></div>
+            </div>
+            <div class="auto-container">
+                <div class="section-title">
+                    <span class="sub-title">Sign In</span>
+                    <h2>Welcome To NextaFinance</h2>
+                </div>
+                {% include 'crypto/alerts.html' %}
+                <div class="form-box">
+                    <h4>Sign In to your account</h4>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" name="username_or_email" placeholder="Username or Email" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="icon-box"><span><img src="{% static 'assets/images/icons/icon-21.svg' %}" alt=""></span>
+                            </div>
+                            <input type="password" name="password" placeholder="Password" required>
+                        </div>
+                        <div class="option-box">
+                            <!-- <div class="check-box">
+                                <input class="check" type="checkbox" id="checkbox">
+                                <label for="checkbox">Remember Me</label>
+                            </div> -->
+                            <div class="reset-btn"><a class="text-light" href="{% url 'accounts:forgetpassword' %}">Forgot Password</a></div>
+                        </div>
+                        <div class="btn-box">
+                            <button type="submit" class="theme-btn">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="text">Can’t login? <a href="{% url 'accounts:sign_up' %}">Sign up for new user?</a></div>
+            </div>
+        </section>
+        <!-- Form Section End -->
+
+
+{% endblock %}

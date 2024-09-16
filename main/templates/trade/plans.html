@@ -1,0 +1,228 @@
+{% extends 'trade/base.html' %}
+{% block title %}Plans{% endblock %}
+{% load static %}
+{% block content %}
+
+
+<style>
+   
+   .box-miner-cta {
+    position: relative;
+    display: inline-block;
+}
+
+.info-text {
+    background-color: #FFFFFF;
+    width: 200px;
+    border: 2px solid #000000;
+    padding: 10px;
+    font-size: 16px;
+    position: absolute;
+    top: 100%; /* Position below the .box-miner-cta */
+    left: 0;
+    margin-top: 10px;
+    display: none;
+    z-index: 10; /* Ensure it appears above other content */
+}
+
+.box-miner-cta:hover .info-text {
+    display: block;
+}
+
+   
+</style>
+
+<!-- Banner/Slider -->
+<div class="page-head section row-vm light has-bg">
+   <div class="imagebg">
+      <img src="{% static 'trade/frontend_assets/images/team-lefts.jpg' %}" alt="page-head">
+   </div>
+   <div class="container">
+      <div class="row text-center">
+         <div class="col-md-12">
+            <h2>Invest</h2>
+            <div class="page-breadcrumb">
+               <ul class="breadcrumb">
+                  <li><a href="/">Home</a></li>
+                  <li class="active"><span>Invest</span></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- #end Banner/Slider -->
+
+<!-- Pricing Tab -->
+<div class="pricing-tab  section-pad section">
+   <div class="container">
+      <div class="section-head">
+         <div class="row text-center">
+            <div class="col-md-6 col-md-offset-3">
+               <h2 class="heading-section">Pricing/Plans</h2>
+            </div>
+         </div>
+      </div>
+      <div class="gaps size-3x"></div>
+      <div class="tab-custom">
+         <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+               <ul class="nav nav-tabs ucap ">
+                  <li class="active"><a href="#tab1" data-toggle="tab">CRYPTO</a></li>
+                  <!--<li><a href="#tab2" data-toggle="tab">NFP</a></li>
+                     <li><a href="#tab3" data-toggle="tab">IEO</a></li>
+                      <li><a href="#tab4" data-toggle="tab">YEN</a></li> -->
+               </ul>
+            </div>
+         </div>
+         <div class="gaps size-2x"></div>
+         <!-- Tab panes -->
+         <div class="tab-content no-pd">
+            <div class="tab-pane fade in active" id="tab1">
+                <div class="row text-center">
+                                                                <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm" style="margin-bottom: 3%!important;">
+                        <div class="box-miner box-miner-alt">
+                            <div class="box-miner-price">
+                            <h4 class="price-for">RUBY Plan</h4>
+                            <span class="price-unit">$5,000 - $15,000</span>
+                            </div>
+                            <ul class="box-miner-list">
+                            <li>
+                                <span>2.5% - 5% Weekly ROI</span>
+                            </li>
+                            <li>
+                                <span>10% - 20%   Monthly  ROI</span>
+                            </li>
+                            <li>
+                                <span>12 months Plan Duration</span>
+                            </li>
+                            <li>
+                                <span>10% Affiliate Commission</span>
+                            </li>
+                                                        
+                            
+                            <h4 class="box-miner-title">
+                                <div class="box-miner-cta">
+                                    <a style="background-color: white;color: black;margin: 0;" class="btn btn-md btn-alt">Info</a>
+                                          <span class="info-text">
+                                            Suitable for cautious investors seeking steady growth with less risk. Returns may be better than a savings account, but values can still fluctuate. This strategy focuses on less volatile assets like bonds and money market funds to reduce risks.
+
+                                          </span>                              
+                                </div>
+                            </h4>
+                            <li>
+                                                  
+                                <div class="box-miner-cta">
+                                    <a href="{% if user.is_authenticated %}{% url 'accounts:dashboard' %}{% else %}{% url 'accounts:sign_up' %}{% endif %}" class="btn btn-md btn-alt">Get Started</a>
+                                                                           
+                                </div>
+                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- col -->
+                <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm" style="margin-bottom: 3%!important;">
+                        <div class="box-miner box-miner-alt">
+                            <div class="box-miner-price">
+                            <h4 class="price-for">Conservative Plan</h4>
+                            <span class="price-unit">$16,000 - $49,000</span>
+                            </div>
+                            <ul class="box-miner-list">
+                                <li>
+                                    <span>2.5% - 5% Weekly ROI</span>
+                                </li>
+                                <li>
+                                    <span>10% - 20%   Monthly  ROI</span>
+                                </li>
+                                <li>
+                                    <span>12 months Plan Duration</span>
+                                </li>
+                                <li>
+                                    <span>10% Affiliate Commission</span>
+                                </li>
+                                                            
+                                
+                                <h4 class="box-miner-title">
+                                    <div class="box-miner-cta">
+                                        <a style="background-color: white;color: black;margin: 0;" class="btn btn-md btn-alt">Info</a>
+                                              <span class="info-text">
+                                                Suitable for investors close to retirement or those preferring steady growth with lower volatility. 
+                                                Returns are typically better than a savings account, though values may fluctuate. 
+                                                This strategy emphasizes less volatile assets like bonds and money market funds to minimize risk.
+                                              </span>                              
+                                    </div>
+                                </h4>
+                                <li>
+                                                      
+                                    <div class="box-miner-cta">
+                                        <a href="{% if user.is_authenticated %}{% url 'accounts:dashboard' %}{% else %}{% url 'accounts:sign_up' %}{% endif %}" class="btn btn-md btn-alt">Get Started</a>
+                                                                               
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                        <!-- col -->
+                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm" style="margin-bottom: 3%!important;">
+                        <div class="box-miner box-miner-alt">
+                            <div class="box-miner-price">
+                            <h4 class="price-for">Platinum Plan</h4>
+                            <span class="price-unit">$50,000 - $250,000</span>
+                            </div>
+                            <ul class="box-miner-list">
+                                <li>
+                                    <span>5% - 7% Weekly ROI</span>
+                                </li>
+                                <li>
+                                    <span>20% - 28%  Monthly  ROI</span>
+                                </li>
+                                <li>
+                                    <span>12 months Plan Duration</span>
+                                </li>
+                                <li>
+                                    <span>10% Affiliate Commission</span>
+                                </li>
+                                                            
+                                <h4 class="box-miner-title">
+                                    <div class="box-miner-cta">
+                                        <a style="background-color: white;color: black;margin: 0;" class="btn btn-md btn-alt">Info</a>
+                                              <span class="info-text">
+                                                Suitable for investors seeking long-term growth with a medium-term horizon who can handle moderate volatility. 
+                                                This strategy aims for higher returns than a savings account while accepting some fluctuations. 
+                                                It focuses on a broad asset mix with a greater emphasis on equities.
+                                              </span>                              
+                                    </div>
+                                </h4>
+                                <li>
+                                                      
+                                    <div class="box-miner-cta">
+                                        <a href="{% if user.is_authenticated %}{% url 'accounts:dashboard' %}{% else %}{% url 'accounts:sign_up' %}{% endif %}" class="btn btn-md btn-alt">Get Started</a>
+                                                                               
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        </div>
+                        <!-- col -->
+                            
+                        <!-- col -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab2">
+               <div class="row text-center">
+                  <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm"></div>
+                  <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm"></div>
+               </div>
+            </div>
+            <div class="tab-pane fade" id="tab3">
+               <div class="row text-center">
+                  <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm"></div>
+                  <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+{% endblock %}
