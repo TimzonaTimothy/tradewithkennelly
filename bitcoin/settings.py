@@ -26,7 +26,7 @@ SECRET_KEY = 'vwji6*o+^@hs2x&^*h@oxw!pq33x2(i*deue$w_!&#_r)^l8$u'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['*','https://caraxasset.onrender.com',]
+ALLOWED_HOSTS = ['*','https://tradewithkennellysi.onrender.com',]
 
 
 # Application definition
