@@ -463,10 +463,15 @@
                       <div class="f-fallback">
                         <h1>Hello, {{user.username}}!</h1> <br>
                         <p>You have received a referral commission of: ${{commission}} from the {{referrer}} ({{amount}}) deposit<br>
-                         
+                          {% if role == "child" %}
+                          <p>Congratulations, you've earned {{ commission }} as a commission for referring a user!</p>
+                      {% elif role == "parent" %}
+                          <p>You've earned {{ commission }} as a commission for referring the referrer of a new user!</p>
+                      {% endif %}
+                      
                         <br>
                         You can check your statistics here:<br>
-                        {{domain}}<br>
+                       <br>
                         Thank you for investing with us.<br><br></p>
                         <!-- Action -->
                         <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">

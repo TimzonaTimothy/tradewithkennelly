@@ -156,7 +156,8 @@ class Investment(models.Model):
     created_at = models.DateTimeField(default=timezone.now, blank=True, null=True)
     added_to_balance = models.BooleanField(default=False, null=True)
 
-    COMMISSION_PERCENTAGE = 10  # commission percentage
+    CHILD_COMMISSION_PERCENTAGE = 10  # 10% for the child
+    PARENT_COMMISSION_PERCENTAGE = 5  # 5% for the parent
 
     def __str__(self):
         return self.transaction_id
@@ -204,19 +205,29 @@ class Investment(models.Model):
         send_email.send()
     
     def add_commission(self):
+        """Add commission to both the referrer and the grand-referrer."""
         if self.user.recommended_by:
+            # Child (current user) earns 10%
             referrer = Account.objects.get(username=self.user.recommended_by)
-            commission = self.amount * (self.COMMISSION_PERCENTAGE / 100)
-            referrer.crypto_balance += commission
-            amount = self.amount
+            child_commission = self.amount * (self.CHILD_COMMISSION_PERCENTAGE / 100)
+            referrer.balance += child_commission
             referrer.save()
-            self.send_commission_notification(amount,referrer, commission)
+            self.send_commission_notification(self.amount, referrer, child_commission, "child")
 
-    def send_commission_notification(self, amount,referrer, commission):
+            # Parent (referrer's referrer) earns 5%
+            if referrer.recommended_by:
+                parent_referrer = Account.objects.get(username=referrer.recommended_by)
+                parent_commission = self.amount * (self.PARENT_COMMISSION_PERCENTAGE / 100)
+                parent_referrer.balance += parent_commission
+                parent_referrer.save()
+                self.send_commission_notification(self.amount, parent_referrer, parent_commission, "parent")
+
+    def send_commission_notification(self, amount,referrer, commission, role):
         message = render_to_string('crypto/dashboard/mail/commission_notification.html', {
             'amount':amount,
             'referrer': referrer.full_name(),
             'commission': commission,
+             'role': role
         })
         to_email = referrer.email
         send_email = EmailMessage('Commission Earned', message, to=[to_email])

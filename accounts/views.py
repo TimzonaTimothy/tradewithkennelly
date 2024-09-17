@@ -147,7 +147,7 @@ def sign_up(request, referred='',bot=''):
             to_email = email
             send_email = EmailMessage(mail_subject, message, to=[to_email])
             send_email.content_subtype = "html"
-            send_email.send()
+            # send_email.send()
 
             # send_mail('New Sign up','Email ' + email + ' Username: '+username,settings.DEFAULT_FROM_EMAIL,[settings.DEFAULT_FROM_EMAIL],fail_silently=False)
             
@@ -293,34 +293,26 @@ def validate_earning(request):
             inventments.save()
 
     now = timezone.now()
-    expired_date = now.astimezone() - timedelta(days=3)
+    expired_date = now.astimezone() - timedelta(days=365)
     model_list = Investment.objects.all().filter(created_at__lt=expired_date)
     for model_item in model_list:
-        if model_item.status == "Approved" and model_item.plan == 'STARTER PLAN':
+        if model_item.status == "Approved" and model_item.plan == 'RUBY PLAN':
             model_item.status = "Completed"
             model_item.save()
             
     now = timezone.now()
-    expired_date = now - timedelta(days=3)
+    expired_date = now - timedelta(days=365)
     model_list = Investment.objects.all().filter(created_at__lt=expired_date)
     for model_item in model_list:
-        if model_item.status == "Approved" and model_item.plan == 'PREMIUM PLAN':
+        if model_item.status == "Approved" and model_item.plan == 'CONSERVATIVE PLAN':
             model_item.status = "Completed"
             model_item.save()
     
     now = timezone.now()
-    expired_date = now - timedelta(days=10)
+    expired_date = now - timedelta(days=365)
     model_list = Investment.objects.all().filter(created_at__lt=expired_date)
     for model_item in model_list:
-        if model_item.status == "Approved" and model_item.plan == 'DELUXE PLAN':
-            model_item.status = "Completed"
-            model_item.save()
-    
-    now = timezone.now()
-    expired_date = now - timedelta(days=30)
-    model_list = Investment.objects.all().filter(created_at__lt=expired_date)
-    for model_item in model_list:
-        if model_item.status == "Approved" and model_item.plan == 'LUXURY PLAN':
+        if model_item.status == "Approved" and model_item.plan == 'PLATINUM PLAN':
             model_item.status = "Completed"
             model_item.save()
     

@@ -24,6 +24,7 @@
                             {% include 'trade/alerts.html' %}
                                 <form class="is-alter form-validate" method="POST"  enctype="multipart/form-data" autocomplete="off">
                                     {% csrf_token %}
+                                    <input type="hidden" name="bot-c">
                     <div class="form-group">
                         <div class="form-control-wrap">
                             <div class="form-icon form-icon-left">

@@ -161,38 +161,6 @@
         <script src="{% static 'auth/assets/js/bundle.js' %}"></script>
         <script src="{% static 'auth/assets/js/scripts.js' %}"></script>
         <script type="text/javascript">
-            // Check if user email address is available
-            $(document).ready(function() {
-
-                //Verify if user email address is already existing
-                $('#email_address').keyup (function(){
-                var email_address = $('#email_address').val();
-                $("#loaderIcon1").show();
-                var xmlhttp=new XMLHttpRequest();
-                xmlhttp.onreadystatechange=function() {
-                    if (this.readyState==4 && this.status==200) {
-                    var feedback_data = this.responseText;
-                    if (feedback_data == "1") {
-                        $("#loaderIcon1").hide(500);
-                        $('#email_address').css('border', '1px solid red');
-                        $("#username-status").html('Email Address unavailable').css('color', 'red');
-                        $("#signup_btn").prop("disabled", true);
-                    } else if (feedback_data == "0") {
-                        $("#loaderIcon1").hide(500);
-                        $('#email_address').css('border', '1px solid green');
-                        $("#username-status").html('Email Address Available').css('color', 'green');
-                    } else {
-                        $("#loaderIcon1").hide(500);
-                        $('#email_address').css('border', '1px solid red');
-                        $("#username-status").html('Email Address unavailable').css('color', 'red');
-                    } 
-                    }
-                }
-                xmlhttp.open("GET","components/check_availability.php?email="+email_address,true);
-                xmlhttp.send();
-                });
-            });
-
             //Password requirements validation
             $("#password2").on("keyup", function () {
                 if ($("#password").val() == $("#password2").val()) {
@@ -290,18 +258,7 @@
             });
         </script>
         <!-- sweetalert js -->
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.2/dist/sweetalert2.all.min.js?version=1725314548"></script>
-        <!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
-        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js?version=1725314548"></script>
-        <script> 
-            function onlyNumberKey(evt) { 
-                // Only ASCII charactar in that range allowed 
-                var ASCIICode = (evt.which) ? evt.which : evt.keyCode 
-                if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) 
-                return false; 
-                return true; 
-            } 
-        </script>
+      
         <script>
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({
