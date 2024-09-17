@@ -147,7 +147,7 @@ def sign_up(request, referred='',bot=''):
             to_email = email
             send_email = EmailMessage(mail_subject, message, to=[to_email])
             send_email.content_subtype = "html"
-            # send_email.send()
+            send_email.send()
 
             # send_mail('New Sign up','Email ' + email + ' Username: '+username,settings.DEFAULT_FROM_EMAIL,[settings.DEFAULT_FROM_EMAIL],fail_silently=False)
             
