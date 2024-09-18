@@ -964,7 +964,7 @@ div[class*="wide-"] + div[class*="row-column"]:not([class*="mg"]):not([class*="m
 .breadcrumb.breadcrumb-dash > li + li:before { content: "\2013"; }
 .breadcrumb.breadcrumb-dots > li + li:before { content: "\2022"; }
 
-.banner { min-height: 670px; }
+.banner { min-height: 570px; }
 
 .banner-content { padding: 70px 0; width: 100%; flex-grow: 1; }
 .banner-content p { margin-bottom: 38px; }
