@@ -187,6 +187,13 @@
                         <li class=""><a href="{% url 'plans' %}">Investment Plans</a></li>
                         <li class=""><a href="{% url 'market_data' %}">Market Data</a></li>
                         <li class=""><a href="{% url 'contact' %}">Contact</a></li>
+                        {% if user.is_authenticated %}
+                        <li class=""><a href="{% url 'accounts:dasboard'}">Dashboard</a></li>
+                        <li class=""><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                        {% else %}
+                        <li class=""><a href="{% url 'accounts:sign_up'}">Register</a></li>
+                        <li class=""><a href="{% url 'accounts:sign_in'}">Login</a></li>
+                        {% endi %}
                         <!-- {% if user.is_authenticated %}
                         <li class="quote-btn hidden-xs hidden-sm"><a class="btn" href="{% url 'accounts:dasboard'}">dashboard</a></li>
                         {% else %}

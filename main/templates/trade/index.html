@@ -90,8 +90,18 @@
                         <p class="lead animate-bottom delayms7">Leverage your capital effectively by
                             diversifying investments across cryptocurrency, commodities, and mutual funds.</p>
                         <ul class="btns animate-bottom delayms9">
-                            <li><a href="{% if user.is_authenticated %}{% url 'accounts:dashboard' %}{% else %}{% url 'accounts:sign_up' %}{% endif %}" class="btn">Get Started</a></li>
-                            <li><a href="{% if user.is_authenticated %}{% url 'accounts:dashboard' %}{% else %}{% url 'accounts:sign_in' %}{% endif %}" class="btn btn-outline">Login</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="{% url 'accounts:investments' %}" class="btn">Get Started</a></li>
+                            {% else %}
+                            <li><a href="{% url 'accounts:sign_up' %}" class="btn">Get Started</a></li>
+                            {% endif %}
+
+                            {% if user.is_authenticated %}
+                            <li><a href="{% url 'accounts:dashboard' %}" class="btn btn-outline">Dashboard</a></li>
+                            {% else %}
+                            <li><a href="{% url 'accounts:sign_in' %}" class="btn btn-outline">Login</a></li>
+                            {% endif %}
+                            
                         </ul>
                     </div>
                 </div>
@@ -120,10 +130,10 @@
     </div>
 </div>
 <!-- End Banner/Slider -->
-<div class="text-center mt-5" style="font-weight: bolder; margin: 5px 0px;"><h4>TRUSTED BY EXECUTIVES FROM <br>
+<div class="text-center" style="font-weight: bolder; margin: 5px 0px;"><h4>TRUSTED BY EXECUTIVES FROM <br>
     THESE COMPANIES AND MANY MORE</h4></div>
 <!-- BTC Ticker -->
-<div class="btc-ticker mb-5" style="margin-bottom: 8px;">
+<div class="btc-ticker" style="margin-bottom: 8px;">
     <div class="ticker-item">
         <!-- <div class="btcwdgt-price" bw-cur="usd"></div> -->
         <img src="{% static 'wave.jfif' %}" width="20"  alt="">
