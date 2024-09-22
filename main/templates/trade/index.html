@@ -4,75 +4,50 @@
 
 
 <style>
-    @import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
- @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
- .snip1533 {
-   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-   color: #9e9e9e;
-   display: inline-block;
-   font-family: 'Roboto', Arial, sans-serif;
-   font-size: 16px;
-   margin: 35px 10px 10px;
-   max-width: 310px;
-   min-width: 250px;
-   position: relative;
-   text-align: center;
-   width: 100%;
-   background-color: #ffffff;
-   border-radius: 5px;
-   border-top: 5px solid #000052;
- }
- 
- .snip1533 *,
- .snip1533 *:before {
-   -webkit-box-sizing: border-box;
-   box-sizing: border-box;
-   -webkit-transition: all 0.1s ease-out;
-   transition: all 0.1s ease-out;
- }
- 
- .snip1533 figcaption {
-   padding: 13% 10% 12%;
- }
- 
- .snip1533 figcaption:before {
-   -webkit-transform: translateX(-50%);
-   transform: translateX(-50%);
-   background-color: #fff;
-   border-radius: 50%;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-   color: #000052;
-   content: "\f10e";
-   font-family: 'FontAwesome';
-   font-size: 32px;
-   font-style: normal;
-   left: 50%;
-   line-height: 60px;
-   position: absolute;
-   top: -30px;
-   width: 60px;
- }
- 
- .snip1533 h3 {
-   color: #3c3c3c;
-   font-size: 20px;
-   font-weight: 300;
-   line-height: 24px;
-   margin: 10px 0 5px;
- }
- 
- .snip1533 h4 {
-   font-weight: 400;
-   margin: 0;
-   opacity: 0.5;
- }
- 
- .snip1533 blockquote {
-   font-style: italic;
-   font-weight: 300;
-   margin: 0 0 20px;
- }
- 
+   .carousel_items {
+  display: flex;
+  wrap: nowrap;
+  overflow: hidden;
+}
+
+.carousel_item {
+  position: relative;
+  min-width: 100%;
+  height: auto; /* or set a custom height */
+  padding: 20vh 0; /* Adjust padding for more space if needed */
+  transition: all 0.5s linear;
+  background-repeat: no-repeat;
+  background-size: contain; /* Ensures the logo doesn't stretch */
+  background-position: center; /* Centers the logo */
+}
+
+.carousel_text {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-shadow: 1px 1px black;
+  font-size: calc(1.5rem + 0.3vw);
+  font-weight: bolder;
+}
+
+.item1 {
+  background-image: url("{% static 'wave.jfif' %}");
+}
+.item2 {
+  background-image: url("{% static 'fiac.webp' %}");
+}
+.item3 {
+  background-image: url("{% static 'fitness.webp' %}");
+}
+.item4 {
+  background-image: url("{% static 'micro.jfif' %}");
+}
+
  </style>
  
 
@@ -129,46 +104,32 @@
         </div>
     </div>
 </div>
+
+
 <!-- End Banner/Slider -->
 <div class="text-center" style="font-weight: bolder;"><h4>TRUSTED BY EXECUTIVES FROM <br>
     THESE COMPANIES AND MANY MORE</h4></div>
 <!-- BTC Ticker -->
-<div class="btc-ticker" style="margin-top: 0px !important;">
-    <div class="ticker-item">
-        <!-- <div class="btcwdgt-price" bw-cur="usd"></div> -->
-        <img src="{% static 'wave.jfif' %}"  style="margin-bottom: 8px;" width="20"  alt="">
+
+<div class="carousel-container">
+    <div class="carousel_items">
+      <div class="carousel_item item1">
+        <!-- <p class="carousel_text">Image 1</p> -->
+      </div>
+      <div class="carousel_item item2">
+        <!-- <p class="carousel_text">Image 2</p> -->
+      </div>
+      <div class="carousel_item item3">
+        <!-- <p class="carousel_text">Image 3</p> -->
+      </div>
+      <div class="carousel_item item4">
+        <!-- <p class="carousel_text">Image 4</p> -->
+      </div>
+      <!-- <div class="carousel_item item5">
+        <p class="carousel_text">Image 5</p>
+      </div> -->
     </div>
-    <div class="ticker-item">
-        <!-- <div class="btcwdgt-price" bw-cur="eur"></div> -->
-        <img src="{% static 'fiac.webp' %}"  style="margin-bottom: 8px;" width="20" alt="">
-    </div>
-    <div class="ticker-item">
-        <!-- <div class="btcwdgt-price" bw-cur="jpy"></div> -->
-        <img src="{% static 'micro.jfif' %}"  style="margin-bottom: 8px;" width="20" height="30" alt="">
-    </div>
-    <div class="ticker-item">
-        <!-- <div class="btcwdgt-price" bw-cur="gbp"></div> -->
-        <img src="{% static 'fitness.webp' %}"  style="margin-bottom: 8px;" width="20" alt="">
-    </div>
-    <div class="ticker-item">
-        <!-- <div class="btcwdgt-price" bw-cur="usd"></div> -->
-        <img src="{% static 'wave.jfif' %}"  style="margin-bottom: 8px;" width="20"  alt="">
-    </div>
-    <div class="ticker-item">
-        <!-- <div class="btcwdgt-price" bw-cur="eur"></div> -->
-        <img src="{% static 'fiac.webp' %}"  style="margin-bottom: 8px;" width="20" alt="">
-    </div>
-    <div class="ticker-item">
-        <!-- <div class="btcwdgt-price" bw-cur="jpy"></div> -->
-        <img src="{% static 'micro.jfif' %}"  style="margin-bottom: 8px;" width="20" height="30" alt="">
-    </div>
-    <div class="ticker-item">
-        <!-- <div class="btcwdgt-price" bw-cur="gbp"></div> -->
-        <img src="{% static 'fitness.webp' %}"  style="margin-bottom: 8px;" width="20" alt="">
-    </div>
-    
-</div>
-<!-- End BTC Ticker -->
+  </div>
 
 
 <!-- Features Box -->
@@ -229,14 +190,14 @@
             <div class="col-md-6 col-md-offset-1 ">
                 <div class="text-block">
                     <h2>Introduction?</h2>
-                    <p>Allow me to express my appreciation for the opportunity tointroduce my investment services to you, 
-                        and I look forwardto being of assistance in helping you meet your financialgoals.</p>
-                    <p>This investment program is founded on the idea thatdiversification and asset allocation are the keys to toinvestment success. All too often investors pursue strategiesthat while steeped in good intentions, 
-                            lack the discipline andplanning considered vital by many investment professionalsto reaching their financial goals. 
-                            <br>At the forefront of this investment method is my personalapproach in constructing an investment portfolio suited toyour needs and a portfolio tracking system developed by aninvestment professional with over a decade of multifacetedinvestment experience. 
-                            Unlike most investment services that only check your assetallocation targets once every quarter, I monitor everyinvestors' account at least once a day. 
-                            The increased volatility of today's markets requires constantmonitoring of an investors' 
-                            portfolio in order to control riskand increase the likelihood of reaching your financial goals.</p>
+                    <p>Allow me to express my appreciation for the opportunity to introduce my investment services to you, 
+                        and I look forward to being of assistance in helping you meet your financial goals.</p>
+                    <p>This investment program is founded on the idea that diversification and asset allocation are the keys to investment success. All too often investors pursue strategies that while steeped in good intentions, 
+                            lack the discipline and planning considered vital by many investment professionals to reaching their financial goals. 
+                            <br>At the forefront of this investment method is my personal approach in constructing an investment portfolio suited to your needs and a portfolio tracking system developed by an investment professional with over a decade of multifaceted investment experience. 
+                            Unlike most investment services that only check your asset allocation targets once every quarter, I monitor every investors' account at least once a day. 
+                            The increased volatility of today's markets requires constant monitoring of an investors' 
+                            portfolio in order to control risk and increase the likelihood of reaching your financial goals.</p>
 
 
 
@@ -305,7 +266,7 @@
                 <div class="box-alt">
                     <span class="pe pe-7s-server"></span>
                     <h4>Payment Options</h4>
-                    <p>While we engage in trading various stocks, our primary payment options are Bitcoin and USDT
+                    <p>While we engage in trading various stocks, our primary payment options are Bitcoin, Ethereum and USDT
                         (Tether).</p>
                 </div>
                 <div class="box-alt">
@@ -344,7 +305,7 @@
                 <div class="box-alt">
                     <span class="pe pe-7s-graph"></span>
                     <h4>Advanced Reporting</h4>
-                    <p>Recieve live statistics and information about trading returns on our sleek user interface.
+                    <p>Receive live statistics and information about trading returns on our sleek user interface.
                     </p>
                 </div>
                 <div class="box-alt">
@@ -465,42 +426,6 @@
 <!--End Section -->
 
 
-
-<center>
-    <h4 style="margin-top: 40px;" >Testimonial</h4>
-    <p>What our clients have to say</p>
- <figure class="snip1533">
-    <figcaption>
-      <blockquote>
-        <p>I will say I've loved the servicesrendered by Trade With KennellyFreelance Investment Services. 
-        I wastreated like one of their biggestcustomers even though I just kickedoff with the minimum $6000.</p>
-      </blockquote>
-      <h3>WAYNE GRANT</h3>
-      <h4>(INVESTOR)</h4>
-    </figcaption>
-  </figure>
-  <figure class="snip1533">
-    <figcaption>
-      <blockquote>
-        <p>I absolutely love Trade With KennellyInvestment Services. When my wifepassed, they set up an investmentaccount for 
-        my life insurance benefits,handled the rollover of an oldVanguard 401(k) as well as my wife's401(k) into an inherited IRA account. Ihighly recommend TWK.</p>
-      </blockquote>
-      <h3>HOWARD FRITZ</h3>
-      <h4>(INVESTOR)</h4>
-    </figcaption>
-  </figure>
-  <figure class="snip1533">
-    <figcaption>
-      <blockquote>
-        <p>The financial advice and planningsections were the biggest perk of TradeWith Kennelly Freelance InvestmentServices. Just like most of us, I amjuggling a 
-        few goals including savingfor retirement, and I'm glad TWKFreelance Investment Services can helpkeep me on schedule.</p>
-      </blockquote>
-      <h3>UCIA CLARKE</h3>
-      <h4>(INVESTOR)</h4>
-    </figcaption>
-  </figure>
- </center>
-
  
 <!-- Section -->
 <div class="section section-pad-sm cta-small light">
@@ -529,6 +454,29 @@
      $(this).removeClass("hover");
    }
  );
+  </script>
+
+  <script>
+    const carouselItems = document.querySelectorAll(".carousel_item"); 
+let i = 1;
+
+setInterval(() => {
+// Accessing All the carousel Items
+ Array.from(carouselItems).forEach((item,index) => {
+
+   if(i < carouselItems.length){
+    item.style.transform = `translateX(-${i*100}%)`
+   }
+  })
+
+
+  if(i < carouselItems.length){
+    i++;
+  }
+  else{
+    i=0;
+  }
+},2000)
   </script>
 
 
