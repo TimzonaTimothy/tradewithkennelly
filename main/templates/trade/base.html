@@ -191,8 +191,8 @@
                         <li class=""><a href="{% url 'accounts:dasboard'}">Dashboard</a></li>
                         <li class=""><a href="{% url 'accounts:logout' %}">Logout</a></li>
                         {% else %}
-                        <li class=""><a href="{% url 'accounts:sign_up'}">Register</a></li>
-                        <li class=""><a href="{% url 'accounts:sign_in'}">Login</a></li>
+                        <li class=""><a href="{% url 'accounts:sign_up' %}">Register</a></li>
+                        <li class=""><a href="{% url 'accounts:sign_in' %}">Login</a></li>
                         {% endif %}
                         <!-- {% if user.is_authenticated %}
                         <li class="quote-btn hidden-xs hidden-sm"><a class="btn" href="{% url 'accounts:dasboard'}">dashboard</a></li>

@@ -70,7 +70,7 @@ def home(request, *args, **kwargs):
         )
         messages.success(request, 'Your email has been sent')
         return HttpResponseRedirect('home')
-    return render(request, 'trade/index.html', {})
+    return render(request, 'new/index.html', {})
 
 def faq(request):
     return render(request, 'trade/faq.html', {})

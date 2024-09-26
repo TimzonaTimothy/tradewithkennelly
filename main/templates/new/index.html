@@ -1,0 +1,645 @@
+{% extends 'new/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+                    <section class="banner light-blue-bg">
+    <div class="slider-thumb"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7 col-lg-7 col-md-12 col-12">
+                <div class="banner-content">
+                    <h2 data-aos="fade-right" data-aos-duration="1000">
+                        Earn with AI technology today
+                    </h2>
+                    <p data-aos="fade-up" data-aos-duration="1500">
+                        Join thousands who’ve discovered a profitable way to utilize cryptocurrency and earn passively by an automated trading system and daily signals
+                    </p>
+                    <div class="banner-anchors">
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'accounts:dasboard'}" class="site-btn grad-btn mb-2" data-aos="fade-up"
+                           target="_self" data-aos-duration="2000"><i
+                                class="anticon anticon anticon-user-add"></i>Make Investment
+                        </a>
+                        {% else %}
+                        <a href="{% url 'accounts:sign_up' %}" class="site-btn grad-btn mb-2" data-aos="fade-up"
+                           target="_self" data-aos-duration="2000"><i
+                                class="anticon anticon anticon-user-add"></i>Make Investment
+                        </a>
+                        {% endif %}
+                        <a href="https://aitradeinvestment.com/#work" class="site-btn white-btn" data-aos="fade-up"
+                           target="_self" data-aos-duration="2500"><i
+                                class="anticon anticon anticon-fire"></i>How it works
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-5 col-md-12 col-12">
+                <style>
+                    .earnings-calculator-hero .video {
+                        bottom: 50% !important;
+                        left: 50% !important;
+                    }
+                </style>
+                <div class="banner-right">
+                    <!--<img src="{% static 'new/assets/global/images/Rd2silDA5AuYvO6dxTux.png' %}" alt="" class="banner-img" data-aos="fade-left"-->
+                    <!--     data-aos-duration="2000"/>-->
+                    <div class="earnings-calculator-img earnings-calculator-hero" data-aos="fade-right" data-aos-duration="2000">
+                        <img class="rounded" src="{% static 'new/assets/global/images/Rd2silDA5AuYvO6dxTux.png' %}" alt="">
+                        <a href="https://res.cloudinary.com/https-flenzy-herokuapp-com/video/upload/v1726580632/documentation_dud063.mp4" class="video video-popup"><i class="fas fa-play"></i></a>
+                    </div>
+                    <div class="dots" style="background: url({% static 'new/assets/global/images/lLJT3xQhVp4mkOyxtRC3.png' %}) repeat;"
+                         data-aos="fade-down-left" data-aos-duration="1500">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+                    <section class="why-choose-us section-style-2">
+    <div class="bat-right" style="background: url({% static 'new/assets/global/images/XIeEtiyw8HzFLOK5lLch.png' %}) repeat;" data-aos="fade-down-left"
+         data-aos-duration="2000"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="why-choose-us-img" data-aos="fade-right" data-aos-duration="2000">
+                    <img src="{% static 'new/assets/global/images/w6wAm8zEpqqk4GzxEWxw.png' %}" alt=""/>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="why-choose-us-content">
+                    <div class="section-title">
+                        <h4 data-aos="fade-down" data-aos-duration="1500">About Us</h4>
+                        <h2 data-aos="fade-down" data-aos-duration="1000">Explore an Ever-Expanding World of Trading</h2>
+                    </div>
+
+                                            <div class="single" data-aos="fade-down" data-aos-duration="2000">
+                            <div class="icons">
+                                <div class="icon">
+                                    <i class="anticon "></i>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4></h4>
+                                <p>
+                                    AITrade the first and safest forex, crypto trading signal asset, investment prediction proving firm, was established to provide esteemed investors with diverse portfolios, a customer-priority approach, and high-tech investment tools. By eliminating FOMO in digital asset investment, our platform offers exclusive interest returns.
+                                </p>
+                            </div>
+                        </div>
+                                            <div class="single" data-aos="fade-down" data-aos-duration="2000">
+                            <div class="icons">
+                                <div class="icon">
+                                    <i class="anticon "></i>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4>Our Mission</h4>
+                                <p>
+                                    We aim to become the fastest-growing investment company, offering an online platform that transforms unsuccessful ventures into successful ones. We believe that satisfaction is the key, which is why we provide fully transparent trading accommodations and financial freedom to our investors, making us reliable and flexible to meet their financial desires.
+                                </p>
+                            </div>
+                        </div>
+                                            <div class="single" data-aos="fade-down" data-aos-duration="2000">
+                            <div class="icons">
+                                <div class="icon">
+                                    <i class="anticon "></i>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4>Our Vision</h4>
+                                <p>
+                                    Our vision is to raise awareness about the opportunities for investment and help our investors understand the amazing world of hygienic trading. We emphasize the importance of decision-making in choosing the right investment platform.
+                                </p>
+                            </div>
+                        </div>
+                                            <div class="single" data-aos="fade-down" data-aos-duration="2000">
+                            <div class="icons">
+                                <div class="icon">
+                                    <i class="anticon "></i>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4>What We Do</h4>
+                                <p>
+                                    Knowledge is the path to successful investing. Without proper analysis, individuals cannot achieve significant capital profits. AITrade introduces you to opportunities in forex, precious metals, natural resources, official bonds, stocks, and updated market information, providing comprehensive performance insights.
+Our strategies are  based on a large series of automated algorithms, meaning the computer largely handles the selection of investments for your portfolio. This means you do not have to do any work on your own, as our extensive database collects vast amounts of information from various investment channels and performs automated buy-ins and sell-outs to guarantee your profit at the stipulated time.
+                                </p>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                    <section class="section-style light-blue-bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-7 col-lg-12">
+                <div class="section-title text-center">
+                    <h4 data-aos="fade-down" data-aos-duration="2000">Investment Calculator</h4>
+                    <h2 data-aos="fade-down" data-aos-duration="1500">
+                        Plan Profit Calculation.
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-md-12">
+                <div class="earnings-calculator-img" data-aos="fade-right" data-aos-duration="2000">
+                    <img class="rounded" src="{% static 'new/assets/global/images/kY1GNdg0EXic9TuMMp4X.jpg" alt="">
+                    <a href="https://vimeo.com/983393197" class="video video-popup"><i class="fas fa-play"></i></a>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-12">
+                <div class="earnings-calculator" data-aos="fade-left" data-aos-duration="2000">
+                    <form action="#">
+                        <div class="single-box">
+                            <label for="">Investment Portfolio:</label>
+                            <select name="selectCalculationPortfolio" id="selectPortfolio"
+                                    class="site-nice-select plan-selects mb-2">
+                                <option value="0">---Select Portfolio---</option>
+                                                                    <option value="1">Real Estate
+                                    </option>
+                                                                    <option value="2">Digital Assets
+                                    </option>
+                                                                    <option value="3">Oil and gas
+                                    </option>
+                                                                    <option value="4">Agriculture
+                                    </option>
+                                                                    <option value="5">Stocks and bonds
+                                    </option>
+                                                                    <option value="6">Gold and mineral assets
+                                    </option>
+                                                                    <option value="7">Retirement And Asset Management
+                                    </option>
+                                
+                            </select>
+                            <select name="selectCalculationPlan" id="selectPlan"
+                                    class="site-nice-select plan-selects mb-2">
+                                <option value="0">---Select Plan---</option>
+
+                            </select>
+                        </div>
+                        <div class="single-box">
+                            <label for="">Enter Amount: </label>
+                            <div class="input-group">
+                                <input type="text" id="enter-amount" class="form-control" aria-label="Amount"
+                                       aria-describedby="basic-addon1">
+                                <span class="input-group-text" id="basic-addon1">USD</span>
+                            </div>
+                        </div>
+
+                        <div class="single-box">
+                            <div class="input-info-text charge " id="amount-level"></div>
+                        </div>
+
+                        <div class="single-box">
+                            <label for="">Profit: <span id="profit-label"></span></label>
+                            <div class="input-group mb-0">
+                                <input type="text" class="form-control" id="profit" disabled>
+                                <span class="input-group-text" id="basic-addon1">USD</span>
+                            </div>
+                        </div>
+                        <div class="single-box mb-0">
+                            <a href="https://aitradeinvestment.com/register" class="site-btn primary-btn w-100 centered"><i
+                                    class="anticon anticon-bank"></i>Let&#039;s Start Earning</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                    <section id="work" class="how-it-works section-style-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-7 col-lg-12">
+                <div class="section-title text-center">
+                    <h4 data-aos="fade-down" data-aos-duration="2000">How It Works</h4>
+                    <h2 data-aos="fade-down" data-aos-duration="1500">
+                        It is a straightforward process to start with us and begin earning money effortlessly.
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <div class="how-it-works-single" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="icon-box">
+                            <img class="icon-box-icon" src="{% static 'new/assets/global/images/rgcX1UNOLmbtZ3FqaTRF.png' %}" alt=""><span><i
+                                    class="anticon anticon-check"></i></span>
+                        </div>
+                        <h4>Register Account</h4>
+                        <p>
+                            Begin your journey by registering on our website. This will enable you to start your trading operations.
+                        </p>
+                    </div>
+                </div>
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <div class="how-it-works-single" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="icon-box">
+                            <img class="icon-box-icon" src="{% static 'new/assets/global/images/XJpLT3lm67UdgIXF9evM.png' %}" alt=""><span><i
+                                    class="anticon anticon-check"></i></span>
+                        </div>
+                        <h4>Verify Email</h4>
+                        <p>
+                            Once your account is created, verify your email to activate your account and ensure smooth communication.
+                        </p>
+                    </div>
+                </div>
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <div class="how-it-works-single" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="icon-box">
+                            <img class="icon-box-icon" src="{% static 'new/assets/global/images/AUYbTtNQ4xTXzOxovUfJ.png' %}" alt=""><span><i
+                                    class="anticon anticon-check"></i></span>
+                        </div>
+                        <h4>Verify KYC</h4>
+                        <p>
+                            Complete the KYC verification process.
+                        </p>
+                    </div>
+                </div>
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <div class="how-it-works-single" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="icon-box">
+                            <img class="icon-box-icon" src="{% static 'new/assets/global/images/MDUaupZdxAhfolZvx45O.png' %}" alt=""><span><i
+                                    class="anticon anticon-check"></i></span>
+                        </div>
+                        <h4>Start Trading</h4>
+                        <p>
+                            Receive a $250 USD signup bonus and dive into trading right away with our free daily trading signals.
+                        </p>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</section>
+                    <section class="why-choose-us section-style-2">
+    <div class="bat-right" style="background: url({% static 'new/assets/global/images/XIeEtiyw8HzFLOK5lLch.png' %}) repeat;" data-aos="fade-down-left"
+         data-aos-duration="2000"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="why-choose-us-img" data-aos="fade-right" data-aos-duration="2000">
+                    <img src="{% static 'new/assets/global/images/w6wAm8zEpqqk4GzxEWxw.png' %}" alt=""/>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="why-choose-us-content">
+                    <div class="section-title">
+                        <h4 data-aos="fade-down" data-aos-duration="1500">WHY CHOOSE US</h4>
+                        <h2 data-aos="fade-down" data-aos-duration="1000">Explore Why You Will Choose Us</h2>
+                    </div>
+
+                                            <div class="single" data-aos="fade-down" data-aos-duration="2000">
+                            <div class="icons">
+                                <div class="icon">
+                                    <i class="anticon anticon anticon-credit-card"></i>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4>Automatic and Manual Gateway</h4>
+                                <p>
+                                    Benefit from both automatic and manual gateways, allowing you to customize your investment approach. Our automated system handles investments based on advanced algorithms, while the manual gateway provides the option to make your own trading decisions, giving you the best of both worlds.
+                                </p>
+                            </div>
+                        </div>
+                                            <div class="single" data-aos="fade-down" data-aos-duration="2000">
+                            <div class="icons">
+                                <div class="icon">
+                                    <i class="anticon anticon anticon-bank"></i>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4>Ranking Badge System</h4>
+                                <p>
+                                    Our ranking badge system rewards your progress and achievements. As you trade and meet various milestones, you earn badges that not only provide recognition but also unlock exclusive features and benefits, enhancing your trading experience.
+                                </p>
+                            </div>
+                        </div>
+                                            <div class="single" data-aos="fade-down" data-aos-duration="2000">
+                            <div class="icons">
+                                <div class="icon">
+                                    <i class="anticon anticon anticon-wallet"></i>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4>Referral Level System</h4>
+                                <p>
+                                    Earn more through our referral level system. When you refer new users to our platform, you receive bonuses based on their activity. The more active your referrals, the higher your rewards. This multi-level system allows you to build a network and earn continuously as it grows.
+                                </p>
+                            </div>
+                        </div>
+                                            <div class="single" data-aos="fade-down" data-aos-duration="2000">
+                            <div class="icons">
+                                <div class="icon">
+                                    <i class="anticon anticon anticon-lock"></i>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4>Secure Application</h4>
+                                <p>
+                                    Enjoy peace of mind with our secure application. We prioritize your security with advanced encryption, multi-factor authentication, and regular security audits to protect your data and investments. Our platform is designed to safeguard against any threats, ensuring a safe trading environment for all users.
+                                </p>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                    <section class="section-style-2 site-overlay"
+         style="background: url({% static 'new/assets/global/images/p7e2WARHpcYJbr7RlDDE.jpg) no-repeat center center fixed;">
+    <div class="container">
+        <div class="row justify-content-center">
+                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="single-stat" data-aos="fade-down" data-aos-duration="1000">
+                        <img src="{% static 'new/assets/global/images/Upbk4eWUnmEbOUDb0S1n.png' %}" alt=""/>
+                        <h3 class="count">522</h3>
+                        <h4>Total Users</h4>
+                    </div>
+                </div>
+                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="single-stat" data-aos="fade-down" data-aos-duration="1000">
+                        <img src="{% static 'new/assets/global/images/4IbFwZ2PZa8nLudMHzSt.png' %}" alt=""/>
+                        <h3 class="count">21453</h3>
+                        <h4>Total Deposit</h4>
+                    </div>
+                </div>
+                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="single-stat" data-aos="fade-down" data-aos-duration="1000">
+                        <img src="{% static 'new/assets/global/images/brPxBdDNKkKu1oFb3uUl.png' %}" alt=""/>
+                        <h3 class="count">112549</h3>
+                        <h4>Total Investment</h4>
+                    </div>
+                </div>
+                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="single-stat" data-aos="fade-down" data-aos-duration="1000">
+                        <img src="{% static 'new/assets/global/images/cxq0OgALCgYjCCcoI6f2.png' %}" alt=""/>
+                        <h3 class="count">58694</h3>
+                        <h4>Total Withdraw</h4>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</section>
+                    <section class="section-style">
+    <div class="bat-left" style="background: url({% static 'new/assets/global/images/sPRwlwtyJVvQ1DRqoACh.png' %}) repeat;" data-aos="fade-down-right"
+         data-aos-duration="2000"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8">
+                <div class="section-title centered">
+                    <h4 data-aos="fade-down" data-aos-duration="2000">Faq Questions</h4>
+                    <h2 data-aos="fade-down" data-aos-duration="1500">Explore Your Questions.</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-12">
+                <div class="faq-contents">
+                    <div class="accordion" id="accordionExample">
+                                                    <div class="accordion-item" data-aos="fade-down" data-aos-duration="1000">
+                                <h2 class="accordion-header" id="headingOne14">
+                                    <button class="accordion-button "
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne14" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                        <span class="icon"><i
+                                                class="anticon anticon-check"></i></span>Who We Are?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne14"
+                                     class="accordion-collapse collapse   show "
+                                     aria-labelledby="headingOne14" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="para">We are AITrade, a leading investment portfolio management  firm dedicated to providing our investors with high-tech tools, a customer-priority approach, and exclusive interest returns. Our mission is to offer financial freedom and transparent trading accommodations, ensuring satisfaction and reliability for our investors</div>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="accordion-item" data-aos="fade-down" data-aos-duration="1000">
+                                <h2 class="accordion-header" id="headingOne15">
+                                    <button class="accordion-button  collapsed "
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne15" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                        <span class="icon"><i
+                                                class="anticon anticon-check"></i></span>Guaranteed 87%  Success Interest Returns Trading Signals, But How?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne15"
+                                     class="accordion-collapse collapse  "
+                                     aria-labelledby="headingOne15" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="para">Our platform guarantees 87% success in interest returns through advanced algorithms, accurate trading signals, and automated trading. By continuously monitoring market conditions and diversifying investment channels, we ensure consistent and reliable profits.</div>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="accordion-item" data-aos="fade-down" data-aos-duration="1000">
+                                <h2 class="accordion-header" id="headingOne28">
+                                    <button class="accordion-button  collapsed "
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne28" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                        <span class="icon"><i
+                                                class="anticon anticon-check"></i></span>What Are Digital Assets and How Are They Valued?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne28"
+                                     class="accordion-collapse collapse  "
+                                     aria-labelledby="headingOne28" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="para">Digital assets are virtual or digital representations of value that can be traded, transferred, or used for investment purposes. These include cryptocurrencies, tokens, and other blockchain-based assets. Their value is determined by market demand, utility, scarcity, and underlying technology. At AITrade, we utilize advanced algorithms to analyze market trends and value digital assets accurately, ensuring informed investment decisions.</div>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="accordion-item" data-aos="fade-down" data-aos-duration="1000">
+                                <h2 class="accordion-header" id="headingOne29">
+                                    <button class="accordion-button  collapsed "
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne29" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                        <span class="icon"><i
+                                                class="anticon anticon-check"></i></span>How Do Ranking and Referral Levels Work?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne29"
+                                     class="accordion-collapse collapse  "
+                                     aria-labelledby="headingOne29" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="para">The Ranking Badge System rewards you with badges for reaching trading milestones, unlocking exclusive features, and providing motivation and recognition. The Referral Level System allows you to earn bonuses by inviting new users, benefiting from a multi-level network effect, and increasing rewards as your referrals become more active.</div>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="accordion-item" data-aos="fade-down" data-aos-duration="1000">
+                                <h2 class="accordion-header" id="headingOne30">
+                                    <button class="accordion-button  collapsed "
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne30" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                        <span class="icon"><i
+                                                class="anticon anticon-check"></i></span>How Can I Ask for Support?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne30"
+                                     class="accordion-collapse collapse  "
+                                     aria-labelledby="headingOne30" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="para">You can request support by contacting our customer service team through our website. We offer multiple channels of communication, including email, live chat, and phone support, to assist you with any questions or concerns. Our dedicated support team is available 24/7 to ensure you have a seamless and satisfactory experience with AITrade.</div>
+                                    </div>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                    <section class="cta site-overlay"
+         style="background: url({% static 'new/assets/global/images/udMk5L0YXsXBK3mgRJQX.jpg) no-repeat center center fixed;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-12">
+                <div class="headding" data-aos="fade-right" data-aos-duration="1500">
+                    <h2 class="white-color">
+                        We&#039;re a more than 1000+ members family, you can join with us with high confident
+                    </h2>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-12">
+                <div class="btns" data-aos="fade-left" data-aos-duration="2000">
+                    <a href="https://aitradeinvestment/register" target="_self"
+                       class="site-btn primary-btn"><i
+                            class="anticon anticon-user-add"></i>Join Us</a>
+                    <a href="https://aitradeinvestment/contact" target="_self"
+                       class="site-btn"><i
+                            class="anticon anticon-mail"></i>Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                    <section class="section-style-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-7 col-lg-12">
+                <div class="section-title text-center">
+                    <h4 data-aos="fade-down" data-aos-duration="2000">Payment Gateways</h4>
+                    <h2 data-aos="fade-down" data-aos-duration="1500">Payment Gateway We Accept</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row brands-logo justify-content-center">
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/images/x2KBMjdkKOxVojM1BLpg.svg" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/stripe.png' %}" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/mollie.png' %}" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/perfectmoney.png' %}" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/coinbase.png' %}" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/paystack.png' %}" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/voguepay.png' %}" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/flutterwave.png' %}" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/coingate.png' %}" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/monnify.svg" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/securionpay.png' %}" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/coinpayments.svg" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/nowpayments.png' %}" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/coinremitter.png' %}" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/cryptomus.png' %}" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/paymongo.png' %}" alt=""/>
+                    </div>
+                </div>
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-6">
+                    <div class="single-brands-logo" data-aos="fade-down" data-aos-duration="2000">
+                        <img src="{% static 'new/assets/global/gateway/btcpayserver.png' %}" alt=""/>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</section>
+                    <section class="section-style-2 dark-blue-bg newslatter-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8">
+                <div class="newslatter" data-aos="fade-down" data-aos-duration="1500">
+                    <form action="https://aitradeinvestment.com/subscriber" method="post">
+                        <input type="hidden" name="_token" value="FakMmlSHVybcqUmzQddfz78uOrLuFwuha600idRc">                        <input type="email" name="email" placeholder="Email Address" required/>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+   
+
+
+{% endblock %}
