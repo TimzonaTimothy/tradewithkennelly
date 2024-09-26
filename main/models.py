@@ -34,3 +34,10 @@ class Contact(models.Model):
     #         recipient_list=recipient_list
     #     )
        
+
+class Newsletter(models.Model):
+    email = models.EmailField(blank=True, null=True,unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return str(self.email)

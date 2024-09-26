@@ -42,15 +42,13 @@
 }
     </style>
 
-    <title>Aitrade Investment -     Home
-</title>
 
 <style>
     :root{
         overflow-x:hidden;
     }
 </style>
-<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="fd8d940c-3168-4fea-bb45-780db8c7e993";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
 </head>
 <style>
     body{
@@ -86,20 +84,20 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav m-auto mb-2 mb-lg-0 main-nav">
                                                                         <li class="nav-item">
-                                <a class="nav-link  active "
+                                <a class="nav-link {% if '/' == request.path %}active{% endif %}"
                                    href="{% url 'home' %}">Home</a>
                             </li>
                                                                                                 <li class="nav-item">
-                                <a class="nav-link "
+                                <a class="nav-link {% if '/about' == request.path %}active{% endif %}"
                                    href="{% url 'about' %}">About</a>
                             </li>
                                                                                                 <li class="nav-item">
-                                <a class="nav-link "
+                                <a class="nav-link {% if '/contact' == request.path %}active{% endif %}"
                                    href="{% url 'contact' %}">Contact</a>
                             </li>
                                                                                                 <li class="nav-item">
-                                <a class="nav-link "
-                                   href="">Services</a>
+                                <a class="nav-link {% url 'contact' %} {% if '/services' == request.path %}active{% endif %}"
+                                   href="{% url 'services' %}">Services</a>
                             </li>
                                             
                 </ul>
@@ -139,14 +137,14 @@
                     <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
 
                     {% if user.is_authenticated %}
-                    <a href="{% url 'accounts:dasboard'}" class="site-btn-sm primary-btn"><i
+                    <a href="{% url 'accounts:dasboard' %}" class="site-btn-sm primary-btn"><i
                                 class="anticon anticon-user-add"></i>Dashboard</a>
                         <a href="{% url 'accounts:logout' %}" class="site-btn-sm grad-btn ms-2"><i
                                 class="anticon anticon-user"></i>Logout</a>
                     {% else %}
-                    <a href="{% url 'accounts:sign_up'}" class="site-btn-sm primary-btn"><i
+                    <a href="{% url 'accounts:sign_up' %}" class="site-btn-sm primary-btn"><i
                         class="anticon anticon-user-add"></i>Register</a>
-                <a href="{% url 'accounts:sign_in'}" class="site-btn-sm grad-btn ms-2"><i
+                <a href="{% url 'accounts:sign_in' %}" class="site-btn-sm grad-btn ms-2"><i
                         class="anticon anticon-user"></i>Login</a>
                     {% endif %}
 

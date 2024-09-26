@@ -1,17 +1,14 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.urls import reverse_lazy,reverse
 from django.contrib import messages
-from django.http import HttpResponseRedirect, HttpResponse
 from accounts.models import *
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
-from django.http import HttpResponse
-from django.http import HttpResponseRedirect
-from .models import Contact
+from django.http import HttpResponseRedirect, JsonResponse,HttpResponse,HttpRequest
+from .models import *
 from django.contrib.auth import logout
 from django.template import RequestContext
 from django.conf import settings
-from django.http import HttpRequest
 from ipware import get_client_ip
 from .utils import get_country_from_ip
 
@@ -73,7 +70,7 @@ def home(request, *args, **kwargs):
     return render(request, 'new/index.html', {})
 
 def faq(request):
-    return render(request, 'trade/faq.html', {})
+    return render(request, 'new/faq.html', {})
 
 def glossary(request):
     return render(request, 'trade/glossary.html', {})
@@ -89,6 +86,9 @@ def privacy(request):
 
 def plans(request):
     return render(request, 'trade/plans.html', {})
+
+def services(request):
+    return render(request, 'new/services.html', {})
 
 def user_logout(request):
     logout(request)
@@ -126,7 +126,7 @@ def about(request):
         messages.success(request, 'Your email has been sent')
         return HttpResponseRedirect('about')
     else:
-        return render(request, 'trade/about.html', {})
+        return render(request, 'new/about-us.html', {})
 
 
 def handler404(request, exception, template_name="404.html"):
@@ -174,4 +174,19 @@ def contact(request):
         messages.success(request, 'Successfully sent!')
         return HttpResponseRedirect('contact')
     else:
-        return render(request, 'trade/contact.html', context={})
+        return render(request, 'new/contact.html', context={})
+
+def newsletter_sub(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        bot = request.POST.get('bot')
+        if bot:
+            return JsonResponse({'error': 'Bot detected'}, status=400)
+        elif not email:
+            return JsonResponse({'error': 'Email is required'}, status=400)
+        elif Newsletter.objects.filter(email=email).exists():
+            return JsonResponse({'error': 'Email already exists'}, status=400)
+        else:
+            newsletter = Newsletter(email=email)
+            newsletter.save()
+            return JsonResponse({'success': 'Email submitted successfully'})

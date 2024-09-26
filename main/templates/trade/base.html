@@ -188,7 +188,7 @@
                         <li class=""><a href="{% url 'market_data' %}">Market Data</a></li>
                         <li class=""><a href="{% url 'contact' %}">Contact</a></li>
                         {% if user.is_authenticated %}
-                        <li class=""><a href="{% url 'accounts:dasboard'}">Dashboard</a></li>
+                        <li class=""><a href="{% url 'accounts:dasboard' %}">Dashboard</a></li>
                         <li class=""><a href="{% url 'accounts:logout' %}">Logout</a></li>
                         {% else %}
                         <li class=""><a href="{% url 'accounts:sign_up' %}">Register</a></li>
