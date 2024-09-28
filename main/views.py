@@ -72,23 +72,24 @@ def home(request, *args, **kwargs):
 def faq(request):
     return render(request, 'new/faq.html', {})
 
+
+def terms(request):
+    return render(request, 'new/terms-and-conditions.html', {})
+
+def privacy(request):
+    return render(request, 'new/privacy-policy.html', {})
+
+def plans(request):
+    return render(request, 'new/plans.html', {})
+
+def services(request):
+    return render(request, 'new/services.html', {})
+
 def glossary(request):
     return render(request, 'trade/glossary.html', {})
 
 def market_data(request):
     return render(request, 'trade/market-data.html', {})
-
-def terms(request):
-    return render(request, 'trade/terms.html', {})
-
-def privacy(request):
-    return render(request, 'trade/privacy.html', {})
-
-def plans(request):
-    return render(request, 'trade/plans.html', {})
-
-def services(request):
-    return render(request, 'new/services.html', {})
 
 def user_logout(request):
     logout(request)

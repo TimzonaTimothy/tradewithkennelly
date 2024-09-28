@@ -1,0 +1,214 @@
+{% extends 'new/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+    .pricing-content{position:relative;}
+  .pricing_design{
+      position: relative;
+      margin: 5px 15px;
+  }
+  .pricing_design .single-pricing{
+      background:#003049;
+      padding: 60px 40px;
+      border-radius:30px;
+      box-shadow: 0 10px 40px -10px rgba(0,64,128,.2);
+      position: relative;
+      z-index: 1;
+  }
+  .pricing_design .single-pricing:before{
+      content: "";
+      background-color: #fff;
+      width: 100%;
+      height: 100%;
+      border-radius: 18px 18px 190px 18px;
+      border: 1px solid #eee;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+  }
+  .price-head{}
+  .price-head h2 {
+      margin-bottom: 20px;
+      font-size: 26px;
+      font-weight: 600;
+  }
+  .price-head h1 {
+      font-weight: 400;
+      margin-top: 30px;
+      margin-bottom: 4px;
+  }
+  .price-head span{}
+  
+  .single-pricing ul{list-style:none;margin-top: 30px;}
+  .single-pricing ul li {
+      line-height: 36px;
+  }
+  .single-pricing ul li i {
+      background: #003049;
+      color: #fff;
+      width: 20px;
+      height: 20px;
+      border-radius: 30px;
+      font-size: 11px;
+      text-align: center;
+      line-height: 20px;
+      margin-right: 6px;
+  }
+  .pricing-price{}
+  
+  .price_btn {
+      background: #003049;
+      padding: 10px 30px;
+      color: #fff;
+      display: inline-block;
+      margin-top: 20px;
+      border-radius: 2px;
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+  }
+  .price_btn:hover{background:#091b1f;color:#fff;text-decoration:none;}
+  a{
+  text-decoration:none;    
+  }
+  
+  .section-title {
+      margin-bottom: 60px;
+  }
+  .text-center {
+      text-align: center!important;
+  }
+  
+  .section-title h2 {
+      font-size: 45px;
+      font-weight: 600;
+      margin-top: 0;
+      position: relative;
+      text-transform: capitalize;
+  }
+  </style>
+    
+
+    <!--page-head-->
+    <section class="page-head site-overlay"
+             style="background: url({% static 'new/assets/global/images/POklQFyF3YG4HBQUd3SU.jpg' %}) no-repeat center top / cover;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 centered">
+                    <h2 data-aos="fade-down" data-aos-duration="2000">Tiers</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--page-head End -->
+
+    
+    <!-- page content -->
+    <section class="how-it-works section-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="frontend-editor-data">
+                    
+                        <section id="pricing" class="pricing-content section-padding text-dark">
+                            <div class="container">					
+                              <div class="section-title text-center">
+                                <h2 class="text-light">Investment Plans</h2>
+                               
+                              </div>				
+                              <div class="row text-center">									
+                                <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
+                                  <div class="pricing_design">
+                                    <div class="single-pricing">
+                                      <div class="price-head">		
+                                        <h2>RUBY PLAN</h2>
+                                        <h1>2.5% - 5% Weekly</h1>
+                                        <span><b>Duration: </b>1 Month</span>
+                                      </div>
+                                      <ul>
+                                        <li><b>Min: </b>$5,000</li>
+                                        <li><b>Max: </b>$15,000</li>
+                                        <li><b>REFERRAL BONUS</b> 10%</li>
+                                        <li>24/7 SUPPORT SERVICE </li>
+                                      </ul>
+                                      <div class="pricing-price">
+                                        
+                                      </div>
+                                      {% if user.is_authenticated %}
+                                      <a href="{% url 'payments:invest' %}" class="price_btn">SELECT PLAN</a>
+                                      {% else %}
+                                      <a href="{% url 'sign_in' %}" class="price_btn">SELECT PLAN</a>
+                                      {% endif %}
+                                    </div>
+                                  </div>
+                                </div><!--- END COL -->	
+                                <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                  <div class="pricing_design">
+                                    <div class="single-pricing">
+                                        <div class="price-head">		
+                                            <h2>CONSERVATIVE PLAN</h2>
+                                            <h1>2.5% - 5% Weekly ROI</h1>
+                                            <span><b>Duration: </b>1 Month</span>
+                                          </div>
+                                          <ul>
+                                            <li><b>Min: </b>$16,000</li>
+                                            <li><b>Max: </b>$49,000</li>
+                                            <li><b>REFERRAL BONUS</b> 10%</li>
+                                            <li>24/7 SUPPORT SERVICE </li>
+                                          </ul>
+                                      <div class="pricing-price">
+                                        
+                                      </div>
+                                      {% if user.is_authenticated %}
+                                      <a href="{% url 'payments:invest' %}" class="price_btn">SELECT PLAN</a>
+                                      {% else %}
+                                      <a href="{% url 'sign_in' %}" class="price_btn">SELECT PLAN</a>
+                                      {% endif %}
+                                    </div>
+                                  </div>
+                                </div><!--- END COL -->	
+                                <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                                  <div class="pricing_design">
+                                    <div class="single-pricing">
+                                        <div class="price-head">		
+                                            <h2>RUBY Plan</h2>
+                                            <h1>5% - 7% Weekly ROI</h1>
+                                            <span><b>Duration: </b>1 Month</span>
+                                          </div>
+                                          <ul>
+                                            <li><b>Min: </b>$50,000</li>
+                                            <li><b>Max: </b>$250,000</li>
+                                            <li><b>REFERRAL BONUS</b> 10%</li>
+                                            <li>24/7 SUPPORT SERVICE </li>
+                                          </ul>
+                                      <div class="pricing-price">
+                                        
+                                      </div>
+                                      {% if user.is_authenticated %}
+                                      <a href="{% url 'payments:invest' %}" class="price_btn">SELECT PLAN</a>
+                                      {% else %}
+                                      <a href="{% url 'sign_in' %}" class="price_btn">SELECT PLAN</a>
+                                      {% endif %}
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                                
+                                
+                                <!--- END COL -->			  
+                              </div><!--- END ROW -->
+                            </div><!--- END CONTAINER -->
+                          </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- page content end -->
+
+    <!-- section  -->
+        <!-- section end-->
+
+{% endblock %}

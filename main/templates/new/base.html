@@ -87,7 +87,11 @@
                                 <a class="nav-link {% if '/' == request.path %}active{% endif %}"
                                    href="{% url 'home' %}">Home</a>
                             </li>
-                                                                                                <li class="nav-item">
+                            <li class="nav-item">
+                                <a class="nav-link {% if '/plans' == request.path %}active{% endif %}"
+                                   href="{% url 'plans' %}">Plans</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link {% if '/about' == request.path %}active{% endif %}"
                                    href="{% url 'about' %}">About</a>
                             </li>
