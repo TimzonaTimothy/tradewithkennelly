@@ -26,26 +26,6 @@ def home(request, *args, **kwargs):
         request.session['ref_code'] = ref_code
         request.session.set_expiry(86400)
     
-    # if not request.user.is_authenticated:
-    #     if not request.session.get('email_sent', False):
-    #         # Get the visitor's IP address
-    #         client_ip, is_routable = get_client_ip(request)
-    #         if client_ip is None:
-    #             client_ip = '0.0.0.0'
-            
-    #         # Check if the IP address is not from localhost
-    #         if client_ip not in ['127.0.0.1', '::1']:
-    #             # Get the country from the IP address
-    #             country = get_country_from_ip(client_ip)
-                
-    #             # Send email notification
-    #             # send_visitor_notification_email(client_ip, country)
-    #             print(client_ip, country)
-                
-    #             # Set the session flag to indicate email has been sent
-    #             request.session['email_sent'] = True
-    #             request.session.set_expiry(86400)
-    
     if request.method == "POST":
         message_name = request.POST['name'] 
         message_email = request.POST['email']
@@ -147,7 +127,8 @@ def contact(request):
     if request.method == "POST":
         message_name = request.POST['name'] 
         message_email = request.POST['email']
-        message = request.POST['message']
+        message_subject = request.POST['subject']
+        message = request.POST['msg']
 
         try:
             bot = request.POST.get('bot-c')
@@ -161,6 +142,7 @@ def contact(request):
         Contact.objects.create(
             full_name=message_name,
             email=message_email,
+            subject = message_subject,
             message=message
         )
             

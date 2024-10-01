@@ -293,7 +293,7 @@ def validate_earning(request):
             inventments.save()
 
     now = timezone.now()
-    expired_date = now.astimezone() - timedelta(days=365)
+    expired_date = now.astimezone() - timedelta(days=7)
     model_list = Investment.objects.all().filter(created_at__lt=expired_date)
     for model_item in model_list:
         if model_item.status == "Approved" and model_item.plan == 'RUBY PLAN':
@@ -301,7 +301,7 @@ def validate_earning(request):
             model_item.save()
             
     now = timezone.now()
-    expired_date = now - timedelta(days=365)
+    expired_date = now - timedelta(days=7)
     model_list = Investment.objects.all().filter(created_at__lt=expired_date)
     for model_item in model_list:
         if model_item.status == "Approved" and model_item.plan == 'CONSERVATIVE PLAN':
@@ -309,7 +309,7 @@ def validate_earning(request):
             model_item.save()
     
     now = timezone.now()
-    expired_date = now - timedelta(days=365)
+    expired_date = now - timedelta(days=7)
     model_list = Investment.objects.all().filter(created_at__lt=expired_date)
     for model_item in model_list:
         if model_item.status == "Approved" and model_item.plan == 'PLATINUM PLAN':

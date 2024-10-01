@@ -248,15 +248,15 @@ def invest(request):
 
     user = request.user
     # Step 1: Check for any ongoing investments
-    # ongoing_investment = Investment.objects.filter(user=user).exclude(status='Completed').exists()
-    # if ongoing_investment:
-    #     messages.error(request, 'You already have an ongoing investment. Please wait until it is completed before making a new one.')
-    #     return HttpResponseRedirect(reverse('payments:investments'))
-    
-    starter_plan_count = Investment.objects.filter(user=user, plan='STARTER PLAN').count()
-    if starter_plan_count >= 3:
-        messages.error(request, 'You can only invest in the Starter Plan Package three times.')
+    ongoing_investment = Investment.objects.filter(user=user).exclude(status='Completed').exists()
+    if ongoing_investment:
+        messages.error(request, 'You already have an ongoing investment. Please wait until it is completed before making a new one.')
         return HttpResponseRedirect(reverse('payments:investments'))
+    
+    # starter_plan_count = Investment.objects.filter(user=user, plan='STARTER PLAN').count()
+    # if starter_plan_count >= 3:
+    #     messages.error(request, 'You can only invest in the Starter Plan Package three times.')
+    #     return HttpResponseRedirect(reverse('payments:investments'))
 
     if request.method == 'POST':
         transaction_id = get_random_string()

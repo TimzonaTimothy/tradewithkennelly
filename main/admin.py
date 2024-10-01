@@ -3,7 +3,7 @@ from .models import *
 
 # Register your models here.
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ('full_name','email',)
+    list_display = ('full_name','email', 'subject')
     list_display_links = ('full_name','email',)
     search_fields = ('full_name','email',)
     list_per_page = 25

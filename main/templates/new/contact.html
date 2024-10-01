@@ -26,12 +26,14 @@
                     </div>
                 </div>
             </div>
+            {% include 'trade/alerts.html' %}
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-12">
                     <div class="site-form">
-                        <form action="https://aitradeinvestment.com/mail-send" method="post" data-aos="fade-down"
+                        <form  method="POST" data-aos="fade-down"
                               data-aos-duration="2000">
-                            <input type="hidden" name="_token" value="FUl1DAqukc47n9GCffIS2YL0VtefCcdS9dUixcJS">                            <div class="row">
+                              {% csrf_token %}
+                            <input type="hidden" name="bot-c" value="FUl1DAqukc47n9GCffIS2YL0VtefCcdS9dUixcJS">                            <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-sm-12">
                                     <input type="text" placeholder="Name" name="name" required>
                                 </div>
